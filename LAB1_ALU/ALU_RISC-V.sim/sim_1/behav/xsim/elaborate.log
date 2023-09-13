@@ -1,0 +1,19 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programs/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto ff39e04dddce430b9edf74ba0ada2ed6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_miriscv_alu_behav xil_defaultlib.tb_miriscv_alu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" Line 22. Module tb_miriscv_alu has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "D:/MIET-APS-Labs/LAB1_ALU/ALU_RISC-V.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.alu_opcodes_pkg
+Compiling module xil_defaultlib.fulladder
+Compiling module xil_defaultlib.fulladder32_default
+Compiling module xil_defaultlib.alu_riscv
+Compiling module xil_defaultlib.tb_miriscv_alu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_miriscv_alu_behav

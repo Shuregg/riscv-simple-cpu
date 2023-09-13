@@ -1,0 +1,15 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+
+Start test: 
+
+==========================
+CLICK THE BUTTON 'Run All'
+==========================
+
+$stop called at time : 0 fs : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" Line 63
+Number of errors:           0
+
+ALU SUCCESS!!!
+
+$finish called at time : 1 ms : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" Line 76
