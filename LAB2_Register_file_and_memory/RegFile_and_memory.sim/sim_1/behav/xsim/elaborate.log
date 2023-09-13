@@ -1,0 +1,15 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: D:/Programms/Vivado/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto b8ba7c37795542ebba50e6658b7422a1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_data_mem_behav xil_defaultlib.tb_data_mem xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/data_mem.sv" Line 1. Module data_mem doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.data_mem
+Compiling module xil_defaultlib.tb_data_mem
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_data_mem_behav

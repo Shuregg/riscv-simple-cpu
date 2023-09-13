@@ -1,0 +1,11 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/RegFile_and_memory.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/data_mem.sv,1694622400,systemVerilog,,D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_data_mem.sv,,data_mem,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/instr_måm.sv,1694620947,systemVerilog,,D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_instr_mem.sv,,instr_mem,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/rf_riscv.sv,1694621359,systemVerilog,,D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_rf_riscv.sv,,rf_riscv,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_data_mem.sv,1693769734,systemVerilog,,,,tb_data_mem,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_instr_mem.sv,1693732165,systemVerilog,,,,instr_mem_ref8;tb_instr_mem,,,,,,,,
+D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_rf_riscv.sv,1693771320,systemVerilog,,,,rf_riscv_ref;tb_rf_riscv,,,,,,,,

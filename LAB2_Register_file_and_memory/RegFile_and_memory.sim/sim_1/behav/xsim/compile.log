@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/data_mem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB2_Register_file_and_memory/tb/tb_data_mem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_data_mem
