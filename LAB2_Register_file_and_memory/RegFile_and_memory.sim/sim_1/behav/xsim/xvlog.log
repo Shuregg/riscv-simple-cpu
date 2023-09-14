@@ -23,5 +23,3 @@ WARNING: [VRFC 10-2938] 'OUT' is already implicitly declared on line 28 [D:/MIET
 WARNING: [VRFC 10-2938] 'clk' is already implicitly declared on line 25 [D:/MIET-APS-Labs/LAB2_Register_file_and_memory/RegFile_and_memory.srcs/sim_1/new/tb_CYBERcobra.sv:32]
 WARNING: [VRFC 10-2938] 'rstn' is already implicitly declared on line 26 [D:/MIET-APS-Labs/LAB2_Register_file_and_memory/RegFile_and_memory.srcs/sim_1/new/tb_CYBERcobra.sv:33]
 WARNING: [VRFC 10-2938] 'sw_i' is already implicitly declared on line 27 [D:/MIET-APS-Labs/LAB2_Register_file_and_memory/RegFile_and_memory.srcs/sim_1/new/tb_CYBERcobra.sv:34]
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/MIET-APS-Labs/LAB2_Register_file_and_memory/RegFile_and_memory.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
