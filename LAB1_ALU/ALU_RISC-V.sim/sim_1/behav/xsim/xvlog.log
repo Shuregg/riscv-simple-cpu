@@ -1,8 +1,2 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB1_ALU/src/alu_opcodes_pkg.sv" into library xil_defaultlib
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module alu_riscv
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB1_ALU/src/fulladder32.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module fulladder32
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_miriscv_alu
-WARNING: [VRFC 10-3380] identifier 'line_dump' is used before its declaration [D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv:66]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_alu_riscv

@@ -7,9 +7,9 @@ Start test:
 CLICK THE BUTTON 'Run All'
 ==========================
 
-$stop called at time : 0 fs : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" Line 63
+$stop called at time : 0 fs : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv" Line 189
 Number of errors:           0
 
-ALU SUCCESS!!!
+ALU is working correctly!!!
 
-$finish called at time : 1 ms : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv" Line 76
+$finish called at time : 1800 ns : File "D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv" Line 211

@@ -2,10 +2,11 @@
 2019.2
 Nov  6 2019
 21:57:16
-D:/MIET-APS-Labs/LAB1_ALU/ALU_RISC-V.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-D:/MIET-APS-Labs/LAB1_ALU/src/alu_opcodes_pkg.sv,1693818354,systemVerilog,D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv;D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv,D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv,,alu_opcodes_pkg,,,,,,,,
-D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv,1694613913,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/src/fulladder.sv,,alu_riscv,,,,,,,,
-D:/MIET-APS-Labs/LAB1_ALU/src/fulladder.sv,1694615456,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/src/fulladder32.sv,,fulladder,,,,,,,,
-D:/MIET-APS-Labs/LAB1_ALU/src/fulladder32.sv,1694615426,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv,,fulladder32,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/ALU_RISC-V.sim/sim_1/behav/xsim/glbl.v,1694705145,verilog,,,,glbl,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/src/alu_opcodes_pkg.sv,1694705145,systemVerilog,D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv,D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv,,alu_opcodes_pkg,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/src/alu_riscv.sv,1694705145,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/src/fulladder.sv,,alu_riscv,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/src/fulladder.sv,1694705145,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/src/fulladder32.sv,,fulladder,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/src/fulladder32.sv,1694705145,systemVerilog,,D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv,,fulladder32,,,,,,,,
+D:/MIET-APS-Labs/LAB1_ALU/tb/tb_alu_riscv.sv,1694952050,systemVerilog,,,,tb_alu_riscv,,,,,,,,
 D:/MIET-APS-Labs/LAB1_ALU/tb/tb_fulladder.sv,1693818336,systemVerilog,,,,tb_fulladder,,,,,,,,
 D:/MIET-APS-Labs/LAB1_ALU/tb/tb_miriscv_alu.sv,1693818354,systemVerilog,,,,tb_miriscv_alu,,,,,,,,
