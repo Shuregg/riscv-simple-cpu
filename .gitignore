@@ -1,0 +1,14 @@
+#ignore all files
+#*
+
+#exclude files systemverilog, verilog, waveform
+#!*.sv
+#!*.v
+#!*.wcfg
+
+*.wdf
+*.xml
+*.lpr
+elaborate.txt
+*.bat
+*.tcl
