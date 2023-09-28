@@ -1,0 +1,8 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/MIET-APS-Labs/carry_lookahead_adder/carry_lookahead_adder.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/MIET-APS-Labs/src/carry_lookahead_adder.sv,1695926678,systemVerilog,,D:/MIET-APS-Labs/src/fulladder.sv,,carry_lookahead_adder,,,,,,,,
+D:/MIET-APS-Labs/src/fulladder.sv,1695925824,systemVerilog,,D:/MIET-APS-Labs/src/sim/carry_lookahead_adder_tb.sv,,fulladder,,,,,,,,
+D:/MIET-APS-Labs/src/sim/carry_lookahead_adder_tb.sv,1695927852,systemVerilog,,,,carry_lookahead_adder_tb,,,,,,,,

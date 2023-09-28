@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../src/carry_lookahead_adder.sv" \
+"../../../../../src/fulladder.sv" \
+"../../../../../src/sim/carry_lookahead_adder_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

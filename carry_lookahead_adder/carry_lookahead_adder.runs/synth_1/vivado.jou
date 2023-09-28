@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Sep 28 21:39:32 2023
+# Process ID: 3996
+# Current directory: D:/MIET-APS-Labs/carry_lookahead_adder/carry_lookahead_adder.runs/synth_1
+# Command line: vivado.exe -log carry_lookahead_adder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source carry_lookahead_adder.tcl
+# Log file: D:/MIET-APS-Labs/carry_lookahead_adder/carry_lookahead_adder.runs/synth_1/carry_lookahead_adder.vds
+# Journal file: D:/MIET-APS-Labs/carry_lookahead_adder/carry_lookahead_adder.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source carry_lookahead_adder.tcl -notrace
