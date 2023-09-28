@@ -12,3 +12,5 @@
 elaborate.txt
 *.bat
 *.tcl
+*.log
+*.pb
