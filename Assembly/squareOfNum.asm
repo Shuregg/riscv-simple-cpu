@@ -1,4 +1,4 @@
-li a0, 7	#addi a0, zero, 5 #load a constant value
+li a0, 7	#addi a0, zero, *your number* #load a constant value
 
 #save const to stack
 addi sp, sp, -8	#increase stack size
