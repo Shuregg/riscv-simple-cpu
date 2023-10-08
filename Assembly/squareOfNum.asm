@@ -7,10 +7,11 @@ sw a0, 4(sp)	#save our constant value to stack
 
 jal ra, square 	#square procedure call
 
-lw a1, 4(sp)	#restore the const value from stack
+#lw a1, 4(sp)	#restore the const value from stack
 lw ra, 0(sp)	#restore the returnadress from stack
 
 addi sp, sp, 8 	#decrease stack size
+j end
 
 square:
 	#prologue
@@ -31,12 +32,14 @@ square:
 
     compare:
     	ble s0, a0, loop	#if(s0 == a0) go to loop
-        j end
+        j retres
 
-    end:
+    retres:
         add a0, s1, zero
     #epilogue
 	lw s0, 8(sp)
     lw s1, 12(sp)
     addi sp, sp, 8
     ret
+end:
+    
