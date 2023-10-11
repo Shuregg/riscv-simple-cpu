@@ -1,0 +1,448 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed Oct 11 15:17:59 2023
+# Process ID: 14016
+# Current directory: D:/Study/miet-aps/LAB2_Register_file_and_memory/programableDevice.runs/synth_1
+# Command line: vivado.exe -log CYBERcobra.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CYBERcobra.tcl
+# Log file: D:/Study/miet-aps/LAB2_Register_file_and_memory/programableDevice.runs/synth_1/CYBERcobra.vds
+# Journal file: D:/Study/miet-aps/LAB2_Register_file_and_memory/programableDevice.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source CYBERcobra.tcl -notrace
+Command: synth_design -top CYBERcobra -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13072 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 786.488 ; gain = 235.012
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'CYBERcobra' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/CYBERcobra.sv:22]
+	Parameter pc_trans_const bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/program_counter.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (1#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/program_counter.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'fulladder32' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder32.sv:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fulladder' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'fulladder' (2#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'fulladder32' (3#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder32.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'instr_mem' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/instr_mem.sv:1]
+	Parameter cells_value bound to: 1024 - type: integer 
+INFO: [Synth 8-3876] $readmem data file 'demo.txt' is read successfully [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/instr_mem.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'instr_mem' (4#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/instr_mem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'alu_riscv' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_riscv.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu_riscv' (5#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_riscv.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'rf_riscv' [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/rf_riscv.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'rf_riscv' (6#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/rf_riscv.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'CYBERcobra' (7#1) [D:/Study/miet-aps/LAB2_Register_file_and_memory/src/CYBERcobra.sv:22]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 859.250 ; gain = 307.773
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 859.250 ; gain = 307.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 859.250 ; gain = 307.773
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 859.250 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc]
+WARNING: [Vivado 12-584] No ports matched 'CLK100'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CLK100'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:8]
+CRITICAL WARNING: [Vivado 12-4739] create_clock:No valid object(s) found for '-objects [get_ports CLK100]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:8]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-584] No ports matched 'SW[0]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[1]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[2]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[3]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[4]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[5]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[6]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[7]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[8]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[9]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[10]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[11]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[12]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[13]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[14]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'SW[15]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CA'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CB'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CC'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CD'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CE'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CF'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'CG'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[0]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[1]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[2]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[3]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[4]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[5]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[6]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'AN[7]'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'resetn'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'BTND'. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:79]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc:79]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [D:/Study/miet-aps/LAB2_Register_file_and_memory/constraints/nexys_a7_100t.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 953.105 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 958.094 ; gain = 4.988
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 958.094 ; gain = 406.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 958.094 ; gain = 406.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 958.094 ; gain = 406.617
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "ROM" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 958.094 ; gain = 406.617
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 128   
++---Registers : 
+	               32 Bit    Registers := 33    
++---Muxes : 
+	  96 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 3     
+	  33 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+	   3 Input      1 Bit        Muxes := 30    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module CYBERcobra 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+Module program_counter 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module fulladder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
+Module instr_mem 
+Detailed RTL Component Info : 
++---Muxes : 
+	  96 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+Module alu_riscv 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module rf_riscv 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 32    
++---Muxes : 
+	  33 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 17    
+	   3 Input      1 Bit        Muxes := 30    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\program_counter_inst/pc_o_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\program_counter_inst/pc_o_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:48 ; elapsed = 00:02:50 . Memory (MB): peak = 980.754 ; gain = 429.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:52 ; elapsed = 00:02:54 . Memory (MB): peak = 980.754 ; gain = 429.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:52 ; elapsed = 00:02:55 . Memory (MB): peak = 980.754 ; gain = 429.277
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:53 ; elapsed = 00:02:55 . Memory (MB): peak = 987.500 ; gain = 436.023
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    18|
+|3     |LUT2   |    86|
+|4     |LUT3   |    68|
+|5     |LUT4   |   141|
+|6     |LUT5   |   222|
+|7     |LUT6   |   719|
+|8     |MUXF7  |   276|
+|9     |MUXF8  |     8|
+|10    |FDRE   |  1022|
+|11    |IBUF   |    18|
+|12    |OBUF   |    32|
++------+-------+------+
+
+Report Instance Areas: 
++------+-----------------------+----------------+------+
+|      |Instance               |Module          |Cells |
++------+-----------------------+----------------+------+
+|1     |top                    |                |  2611|
+|2     |  ALU_inst             |alu_riscv       |    12|
+|3     |  program_counter_inst |program_counter |   271|
+|4     |  register_file_inst   |rf_riscv        |  2277|
++------+-----------------------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:51 ; elapsed = 00:02:56 . Memory (MB): peak = 1001.297 ; gain = 350.977
+Synthesis Optimization Complete : Time (s): cpu = 00:02:55 ; elapsed = 00:02:57 . Memory (MB): peak = 1001.297 ; gain = 449.820
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1013.516 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 302 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'CYBERcobra' is not ideal for floorplanning, since the cellview 'rf_riscv' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.516 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+29 Infos, 37 Warnings, 35 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:59 ; elapsed = 00:03:02 . Memory (MB): peak = 1013.516 ; gain = 720.227
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.516 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Study/miet-aps/LAB2_Register_file_and_memory/programableDevice.runs/synth_1/CYBERcobra.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file CYBERcobra_utilization_synth.rpt -pb CYBERcobra_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 11 15:21:08 2023...

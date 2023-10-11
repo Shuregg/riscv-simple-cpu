@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../src/CYBERcobra.sv" \
+"../../../../src/alu_opcodes_pkg.sv" \
+"../../../../src/alu_riscv.sv" \
+"../../../../src/fulladder.sv" \
+"../../../../src/fulladder32.sv" \
+"../../../../src/instr_mem.sv" \
+"../../../../src/program_counter.sv" \
+"../../../../src/rf_riscv.sv" \
+"../../../../tb/tb_CYBERcobra.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

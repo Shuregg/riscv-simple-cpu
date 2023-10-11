@@ -50,8 +50,8 @@ module CYBERcobra(
   logic [31:0] ALU_res_out;
   
 //Optional wires
-  logic        unconditional_trans;
-  logic        conditional_trans;
+  logic        jump;
+  logic        branch;
   logic [31:0] pc_trans_value;
   logic [31:0] pc_adder_in;
   
@@ -62,16 +62,17 @@ module CYBERcobra(
    .pc_o(PC_out)
    );
   
-  assign unconditional_trans   = instruction[31];
-  assign conditional_trans     = instruction[30] & ALU_flag_out;
+  assign jump   = instruction[31];
+  assign branch     = instruction[30] & ALU_flag_out;
   
-  assign pc_trans_value[9:0]   = {instruction[12:5], 2'b0};
+  assign pc_trans_value[9:0]   = {instruction[12:5], 2'b00};
   assign pc_trans_value[31:10] = {22{instruction[12]}};
   
   assign out_o                 = RF_RD1_out; //!!!!!!!!!!!!!
-  //assign pc_adder_in = (unconditional_trans | conditional_trans) ? pc_trans_value : pc_trans_const;
+  
+  //assign pc_adder_in = (jump | branch) ? pc_trans_value : pc_trans_const;
   always_comb begin
-    if(unconditional_trans || conditional_trans)
+    if(jump || branch)
       pc_adder_in <= pc_trans_value;
     else
       pc_adder_in <= pc_trans_const;

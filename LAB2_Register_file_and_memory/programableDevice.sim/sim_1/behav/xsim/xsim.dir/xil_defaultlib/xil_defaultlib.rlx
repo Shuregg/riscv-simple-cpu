@@ -1,0 +1,19 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+D:/Study/miet-aps/LAB2_Register_file_and_memory/programableDevice.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/CYBERcobra.sv,1697029025,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_opcodes_pkg.sv,,CYBERcobra,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_opcodes_pkg.sv,1696841176,systemVerilog,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_riscv.sv,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_riscv.sv,,alu_opcodes_pkg,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/alu_riscv.sv,1696841176,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder.sv,,alu_riscv,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/data_mem.sv,1696970243,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_data_mem.sv,,data_mem,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder.sv,1696841176,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder32.sv,,fulladder,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/fulladder32.sv,1696841176,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/instr_mem.sv,,fulladder32,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/instr_mem.sv,1697037867,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/program_counter.sv,,instr_mem,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/nexys_CYBERcobra.sv,1696841176,systemVerilog,,,,nexys_CYBERcobra,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/program_counter.sv,1696841176,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/src/rf_riscv.sv,,program_counter,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/src/rf_riscv.sv,1696841176,systemVerilog,,D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_CYBERcobra.sv,,rf_riscv,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_CYBERcobra.sv,1697035999,systemVerilog,,,,tb_CYBERcobra,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_data_mem.sv,1696845493,systemVerilog,,,,tb_data_mem,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_instr_mem.sv,1696950168,systemVerilog,,,,instr_mem_ref;tb_instr_mem,,,,,,,,
+D:/Study/miet-aps/LAB2_Register_file_and_memory/tb/tb_rf_riscv.sv,1696845518,systemVerilog,,,,rf_riscv_ref;tb_rf_riscv,,,,,,,,
