@@ -1,4 +1,4 @@
-li a0, 7	#addi a0, zero, *your number* #load a constant value
+li a0, 5	#addi a0, zero, *your number* #load a constant value
 
 #save const to stack
 addi sp, sp, -8	#increase stack size
@@ -19,19 +19,20 @@ square:
     sw s0, 8(sp)
     sw s1, 12(sp)
     
-    add s0, zero, zero	#s0 = s0 - s0 = 0	
-    addi s0, zero, 1	#s0 = 0 + 1			#s0 - is a loop counter in range [1:a0]
+    addi s0, zero, 1			#s0 = 0 + 1			#s0 - is a loop counter in range [1:a0]
     
-    sub s1, s1, s1	#s1 = s1 - s1 = 0
-	j compare	#compoare with number		#s1 - is a temporary result (accumulator)
+    add s1, zero, zero			#s1 = 0 + 0 = 0
+    bge a0, zero, compare 		#if(a0 >= 0) go to compare
+    sub a0, zero, a0			#else a0 = 0 - a0 = -a0
+	j compare					#compoare with number		#s1 - is a temporary result (accumulator)
     
     loop:
-    addi s0, s0, 1	#s0 += 1
-    add s1, s1, a0	#s1 = s1 + a0	#calculating temp. result
+    addi s0, s0, 1				#s0 += 1
+    add s1, s1, a0				#s1 = s1 + a0	#calculating temp. result
     j compare
 
     compare:
-    	ble s0, a0, loop	#if(s0 == a0) go to loop
+    	ble s0, a0, loop		#if(s0 == a0) go to loop
         j retres
 
     retres:
@@ -42,4 +43,3 @@ square:
     addi sp, sp, 8
     ret
 end:
-    
