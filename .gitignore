@@ -26,3 +26,4 @@ elaborate.txt
 
 *.xpr
 *.cache
+*.runs
