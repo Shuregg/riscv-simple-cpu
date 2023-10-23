@@ -23,3 +23,6 @@ elaborate.txt
 !**/mem
 !**/constraints
 !**/not_project_files
+
+*.xpr
+*.cache
