@@ -27,3 +27,5 @@ elaborate.txt
 *.xpr
 *.cache
 *.runs
+*.ip_user_files
+*.sim
