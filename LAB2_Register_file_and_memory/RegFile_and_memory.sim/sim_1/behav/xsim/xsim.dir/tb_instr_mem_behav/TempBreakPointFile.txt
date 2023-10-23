@@ -1,2 +1,0 @@
-Breakpoint File Version 1.0
-7 true D:/MIET-APS-Labs/LAB2_Register_file_and_memory/src/instr_måm.sv

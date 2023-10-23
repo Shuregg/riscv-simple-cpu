@@ -15,3 +15,11 @@ elaborate.txt
 *.log
 *.pb
 *.jou
+
+!**/src
+!**/sim
+!**/tb
+!**/waveform
+!**/mem
+!**/constraints
+!**/not_project_files

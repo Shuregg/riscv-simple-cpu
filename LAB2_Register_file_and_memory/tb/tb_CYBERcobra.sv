@@ -37,11 +37,12 @@ module tb_CYBERcobra();
     always #5 clk = ~clk;
     
     initial begin 
-    $display( "\nStart test: \n\n==========================\nCLICK THE BUTTON 'Run All'\n==========================\n"); $stop();
+    $display( "\nStart test: \n\n===============================================\nAdd CYBERcobra signals to the waveform and then\nCLICK THE BUTTON 'Run All'\n===============================================\n"); $stop();
     rstn = 1'b1;
     #10;
     rstn = 1'b0;
-    sw_i = 16'b100001000; //значение, до которого считает счетчик
+    //sw_i = 16'b100001000; //????????, ?? ???????? ??????? ???????
+    sw_i = 16'h90; //16'b1001_0000
     //#260;
     //sw_i = 15'b0;
     #10000;

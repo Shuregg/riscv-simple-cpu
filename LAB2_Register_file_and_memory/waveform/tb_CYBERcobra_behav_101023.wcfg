@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_CYBERcobra_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_opcodes_pkg" />
+            <top_module name="glbl" />
+            <top_module name="tb_CYBERcobra" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="9778666fs"></ZoomStartTime>
+      <ZoomEndTime time="10056267fs"></ZoomEndTime>
+      <Cursor1Time time="10010000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="195"></NameColumnWidth>
+      <ValueColumnWidth column_width="206"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/tb_CYBERcobra/OUT" type="array">
+      <obj_property name="ElementShortName">OUT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OUT[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/rstn" type="logic">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/PC_in" type="array">
+      <obj_property name="ElementShortName">PC_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_in[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/PC_out" type="array">
+      <obj_property name="ElementShortName">PC_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_out[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_RA1_in" type="array">
+      <obj_property name="ElementShortName">RF_RA1_in[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_RA1_in[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_RA2_in" type="array">
+      <obj_property name="ElementShortName">RF_RA2_in[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_RA2_in[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_RD1_out" type="array">
+      <obj_property name="ElementShortName">RF_RD1_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_RD1_out[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_RD2_out" type="array">
+      <obj_property name="ElementShortName">RF_RD2_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_RD2_out[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_WA_in" type="array">
+      <obj_property name="ElementShortName">RF_WA_in[4:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_WA_in[4:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/ALU_res_out" type="array">
+      <obj_property name="ElementShortName">ALU_res_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_res_out[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/ALU_flag_out" type="logic">
+      <obj_property name="ElementShortName">ALU_flag_out</obj_property>
+      <obj_property name="ObjectShortName">ALU_flag_out</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_WD_in" type="array">
+      <obj_property name="ElementShortName">RF_WD_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_WD_in[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/ALU_inst/alu_op_i" type="array">
+      <obj_property name="ElementShortName">alu_op_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_op_i[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/instruction" type="array">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/RF_WE_in" type="logic">
+      <obj_property name="ElementShortName">RF_WE_in</obj_property>
+      <obj_property name="ObjectShortName">RF_WE_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/branch" type="logic">
+      <obj_property name="ElementShortName">branch</obj_property>
+      <obj_property name="ObjectShortName">branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/jump" type="logic">
+      <obj_property name="ElementShortName">jump</obj_property>
+      <obj_property name="ObjectShortName">jump</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/out_o" type="array">
+      <obj_property name="ElementShortName">out_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/pc_adder_in" type="array">
+      <obj_property name="ElementShortName">pc_adder_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_adder_in[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/pc_trans_const" type="array">
+      <obj_property name="ElementShortName">pc_trans_const[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_trans_const[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/pc_trans_value" type="array">
+      <obj_property name="ElementShortName">pc_trans_value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_trans_value[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/sw_i" type="array">
+      <obj_property name="ElementShortName">sw_i[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sw_i[15:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+</wave_config>
