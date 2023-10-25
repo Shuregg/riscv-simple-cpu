@@ -22,18 +22,12 @@ module decoder_riscv (
   import riscv_pkg::*;
   
   logic [6:0]   opcode;
-  // logic [4:0]   rd;
   logic [2:0]   funct3;
-  // logic [4:0]   rs1;
-  // logic [4:0]   rs2;
   logic [6:0]   funct7;
 
   always_comb begin
     opcode      <= fetched_instr_i[6:0];
-    // rd     <= fetched_instr_i[11:7];
     funct3      <= fetched_instr_i[14:12];
-    // rs1    <= fetched_instr_i[19:15];
-    // rs2    <= fetched_instr_i[24:20];
     funct7      <= fetched_instr_i[31:25];
     
     mem_we_o    <= 1'b0;
@@ -53,7 +47,6 @@ module decoder_riscv (
       
         OP_OPCODE: begin
           gpr_we_o <= 1'b1;
-          //alu_op_o <= ALU_ADD;
           
           case(funct3)
             3'b000: 
@@ -200,36 +193,24 @@ module decoder_riscv (
         end //end of OP_OPCODE
 
         LOAD_OPCODE: begin 
-          //logic [11:0] imm_U;
-          //imm_U <= fetched_instr_i[31:20];
-          gpr_we_o    <= 1'b1;      //RF_WE
-          a_sel_o     <= OP_A_RS1;  //2'b0; //RF_RD1
-          b_sel_o     <= OP_B_IMM_I; //2'b1;    //imm_I
+          gpr_we_o    <= 1'b1;
+          a_sel_o     <= OP_A_RS1;
+          b_sel_o     <= OP_B_IMM_I;
           alu_op_o    <= ALU_ADD;
           mem_req_o   <= 1'b1;
           mem_we_o    <= 1'b0;
           wb_sel_o    <= WB_LSU_DATA; // 2'd1; //from Load-Store Unit (data memory), not from ALU
-
           csr_we_o  <= 1'b0;
           jal_o     <= 1'b0;
           jalr_o    <= 1'b0;
           branch_o  <= 1'b0;
 
           case(funct3)
-            LDST_B://load byte
-              mem_size_o  <= 3'd0;
-
-            LDST_H://load half
-              mem_size_o  <= 3'd1;
-
-            LDST_W://load word
-              mem_size_o  <= 3'd2;
-
-            LDST_BU://load byte unsigned
-              mem_size_o  <= 3'd4;
-
-            LDST_HU://load half unsigned
-              mem_size_o  <= 3'd5;
+            LDST_B:     mem_size_o  <= 3'd0;//load byte
+            LDST_H:     mem_size_o  <= 3'd1;//load half
+            LDST_W:     mem_size_o  <= 3'd2;//load word
+            LDST_BU:    mem_size_o  <= 3'd4;//load byte unsigned
+            LDST_HU:    mem_size_o  <= 3'd5;//load half unsigned
             default:  begin
               gpr_we_o        <= 1'b0;
               mem_req_o       <= 1'b0;
@@ -238,14 +219,12 @@ module decoder_riscv (
               jalr_o          <= 1'b0;
               branch_o        <= 1'b0;             
             end
-
           endcase  
         end //end of LOAD_OPCODE:
 
         MISC_MEM_OPCODE: begin
           case(funct3)
-            3'b000: begin
-              //NOP
+            3'b000: begin//NOP
             end
             default: begin
               gpr_we_o        <= 1'b0;
@@ -259,23 +238,16 @@ module decoder_riscv (
         end
         
         OP_IMM_OPCODE: begin
-//          logic [11:0] imm_I;
-//          imm_I <= fetched_instr_i[31:20];
           gpr_we_o <= 1'b1;
           b_sel_o <= 1'b1;
           case(funct3)
-            3'b000://ADDI
-              alu_op_o <= ALU_ADD;
-            3'b100://XORI
-              alu_op_o <= ALU_XOR;
-            3'b110://ORI
-              alu_op_o <= ALU_OR;
-            3'b111://ANDI
-              alu_op_o <= ALU_AND;
+            3'b000: alu_op_o <= ALU_ADD;//ADDI
+            3'b100: alu_op_o <= ALU_XOR;//XORI
+            3'b110: alu_op_o <= ALU_OR;//ORI
+            3'b111: alu_op_o <= ALU_AND;//ANDI
             3'b001://SLLI (Shift Left Logical Immediate)
             case(funct7)
-              7'b0000000:
-                alu_op_o <= ALU_SLL;
+              7'b0000000:   alu_op_o <= ALU_SLL;
               default: begin 
                 gpr_we_o        <= 1'b0;
                 b_sel_o         <= 1'b0;
@@ -289,10 +261,8 @@ module decoder_riscv (
 
             3'b101:
             case(funct7)
-              7'b0000000://SRLI (Shift Right Logic Immediate)
-                alu_op_o <= ALU_SRL;
-              7'b0100000://SRAI (Shift Right Arithmethic immediate)
-                alu_op_o <= ALU_SRA;
+              7'b0000000:   alu_op_o <= ALU_SRL;//SRLI (Shift Right Logic Immediate)
+              7'b0100000:   alu_op_o <= ALU_SRA;//SRAI (Shift Right Arithmethic immediate)
               default: begin
                 gpr_we_o        <= 1'b0;
                 b_sel_o         <= 1'b0;
@@ -304,10 +274,8 @@ module decoder_riscv (
               end
             endcase
 
-            3'b010://SLTI (Set if Less Than Immediate)
-              alu_op_o <= ALU_SLTS;
-            3'b011://SLTIU (Set if Less Than Immediate Unsigned)
-              alu_op_o <= ALU_SLTU;
+            3'b010: alu_op_o <= ALU_SLTS;//SLTI (Set if Less Than Immediate)
+            3'b011: alu_op_o <= ALU_SLTU;//SLTIU (Set if Less Than Immediate Unsigned)
             default: begin
               b_sel_o         <= 1'b0;
               gpr_we_o        <= 1'b0;
@@ -317,16 +285,15 @@ module decoder_riscv (
               jalr_o          <= 1'b0;
               branch_o        <= 1'b0;  
             end 
-          endcase //end of OP_IMM:
+          endcase
         end //end of IMM_OPCODE
 
         AUIPC_OPCODE: begin
           gpr_we_o    <= 1'b1;
           a_sel_o     <= OP_A_CURR_PC;
-          b_sel_o     <= OP_A_ZERO; //
+          b_sel_o     <= OP_A_ZERO;
           alu_op_o    <= ALU_ADD;
           wb_sel_o    <= WB_EX_RESULT; //from ALU
-
           mem_req_o   <= 1'b0;
           branch_o    <= 1'b0;
           jal_o       <= 1'b0;
@@ -341,37 +308,30 @@ module decoder_riscv (
           mem_req_o <= 1'b1;
           mem_we_o  <= 1'b1;
           csr_we_o  <= 1'b0;
-
           jal_o     <= 1'b0;
           jalr_o    <= 1'b0;
           branch_o  <= 1'b0;
           
           case(funct3)
-            LDST_B: 
-              mem_size_o <= 3'd0;
-            
-            LDST_H:
-              mem_size_o <= 3'd1;
-
-            LDST_W:
-              mem_size_o <= 3'd2;
-
+            LDST_B: mem_size_o <= 3'd0;
+            LDST_H: mem_size_o <= 3'd1;
+            LDST_W: mem_size_o <= 3'd2;
             default: begin
               gpr_we_o        <= 1'b0;
               mem_req_o       <= 1'b0;
               illegal_instr_o <= 1'b1;
               jal_o           <= 1'b0;
               jalr_o          <= 1'b0;
-              branch_o        <= 1'b0;           
-              mem_we_o        <= 1'b0;     
+              branch_o        <= 1'b0;   
+              mem_we_o        <= 1'b0;            
             end
           endcase
         end //end of STORE
         
         LUI_OPCODE: begin
-          gpr_we_o  <= 1'b1;        //RF_WE
-          a_sel_o   <= OP_A_ZERO;   //2'b10    zero (const)
-          b_sel_o   <= OP_A_ZERO;  //3'b011; signed  //instr[31:12]
+          gpr_we_o  <= 1'b1;
+          a_sel_o   <= OP_A_ZERO;
+          b_sel_o   <= OP_A_ZERO;
           alu_op_o  <= ALU_ADD;
         end //end of LUI
         
@@ -380,22 +340,15 @@ module decoder_riscv (
           branch_o  <= 1'b1;
           a_sel_o   <= OP_A_RS1;
           b_sel_o   <= OP_B_RS2;
-
           jal_o     <= 1'b0; //?
           jalr_o    <= 1'b0; //?
           case(funct3)
-            3'b000://beq
-              alu_op_o  <= ALU_EQ;
-            3'b001://bne
-              alu_op_o  <= ALU_NE;
-            3'b100://blt
-              alu_op_o  <= ALU_LTS;
-            3'b101://bge
-              alu_op_o  <= ALU_GES;
-            3'b110://bltu
-              alu_op_o  <= ALU_LTU;
-            3'b111://bgeu
-              alu_op_o  <= ALU_GEU;
+            3'b000: alu_op_o  <= ALU_EQ;//beq
+            3'b001: alu_op_o  <= ALU_NE;//bne
+            3'b100: alu_op_o  <= ALU_LTS;//blt
+            3'b101: alu_op_o  <= ALU_GES;//bge
+            3'b110: alu_op_o  <= ALU_LTU;//bltu
+            3'b111: alu_op_o  <= ALU_GEU;//bgeu
             default: begin
               branch_o        <= 1'b0;
               gpr_we_o        <= 1'b0;
@@ -415,13 +368,11 @@ module decoder_riscv (
           alu_op_o    <= ALU_ADD;
           mem_req_o   <= 1'b0;
           wb_sel_o    <= WB_EX_RESULT; //from ALU
-
           jal_o       <= 1'b0;
           branch_o    <= 1'b0;
           
           case(funct3)
-            3'b000:
-              jalr_o  <= 1'b1;
+            3'b000: jalr_o  <= 1'b1;
             default: begin
               jalr_o          <= 1'b0;
               gpr_we_o        <= 1'b0;
@@ -441,14 +392,12 @@ module decoder_riscv (
           alu_op_o    <= ALU_ADD;
           mem_req_o   <= 1'b0;
           wb_sel_o    <= WB_EX_RESULT; //from ALU
-          
           jal_o       <= 1'b1;
           branch_o    <= 1'b0;
           jalr_o      <= 1'b0;
         end //end of JAL
         
-        SYSTEM_OPCODE: begin //TODO
-          
+        SYSTEM_OPCODE: begin 
           gpr_we_o  <= 1'b1;
           csr_we_o  <= 1'b1;
           wb_sel_o  <= WB_CSR_DATA;
@@ -458,10 +407,8 @@ module decoder_riscv (
               gpr_we_o        <= 1'b0; //?
               csr_we_o        <= 1'b0; //?
               case(funct7)
-                7'h00: //environment call
-                  illegal_instr_o <= 1'b1;
-                7'h01: //environment break
-                  illegal_instr_o <= 1'b1;
+                7'h00:  illegal_instr_o <= 1'b1;//environment call
+                7'h01:  illegal_instr_o <= 1'b1;//environment break
                 7'h18: begin
                   mret_o          <= 1'b1;
                   illegal_instr_o <= 1'b0;
@@ -477,26 +424,12 @@ module decoder_riscv (
                 end
               endcase
             end
-
-            CSR_RW: begin          //= 3'b001;
-              csr_op_o  <= funct3;
-            end
-            CSR_RS: begin          //= 3'b010;
-              csr_op_o  <= funct3;
-            end
-            CSR_RC: begin          //= 3'b011;
-              csr_op_o  <= funct3;
-            end
-            CSR_RWI: begin         //= 3'b101;
-              csr_op_o  <= funct3;
-            end
-            CSR_RSI: begin         //= 3'b110;
-              csr_op_o  <= funct3;
-            end
-            CSR_RCI: begin         //= 3'b111;
-              csr_op_o  <= funct3;
-            end
-
+            CSR_RW:     csr_op_o  <= funct3;        //= 3'b001;
+            CSR_RS:     csr_op_o  <= funct3;        //= 3'b010;
+            CSR_RC:     csr_op_o  <= funct3;        //= 3'b011;
+            CSR_RWI:    csr_op_o  <= funct3;        //= 3'b101;
+            CSR_RSI:    csr_op_o  <= funct3;        //= 3'b110; 
+            CSR_RCI:    csr_op_o  <= funct3;        //= 3'b111;
             default: begin
               gpr_we_o        <= 1'b0;
               mem_req_o       <= 1'b0;
