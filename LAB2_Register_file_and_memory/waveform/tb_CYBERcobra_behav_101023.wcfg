@@ -12,19 +12,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="738637fs"></ZoomStartTime>
-      <ZoomEndTime time="795638fs"></ZoomEndTime>
-      <Cursor1Time time="400000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="622501fs"></ZoomEndTime>
+      <Cursor1Time time="10010000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="195"></NameColumnWidth>
-      <ValueColumnWidth column_width="201"></ValueColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/tb_CYBERcobra/OUT" type="array">
       <obj_property name="ElementShortName">OUT[31:0]</obj_property>
       <obj_property name="ObjectShortName">OUT[31:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_CYBERcobra/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -118,10 +118,6 @@
       <obj_property name="ElementShortName">RF_WE_in</obj_property>
       <obj_property name="ObjectShortName">RF_WE_in</obj_property>
    </wvobject>
-   <wvobject fp_name="/tb_CYBERcobra/dut/branch" type="logic">
-      <obj_property name="ElementShortName">branch</obj_property>
-      <obj_property name="ObjectShortName">branch</obj_property>
-   </wvobject>
    <wvobject fp_name="/tb_CYBERcobra/dut/jump" type="logic">
       <obj_property name="ElementShortName">jump</obj_property>
       <obj_property name="ObjectShortName">jump</obj_property>
@@ -149,5 +145,13 @@
       <obj_property name="ElementShortName">sw_i[15:0]</obj_property>
       <obj_property name="ObjectShortName">sw_i[15:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/register_file_inst/rf_mem[1]" type="array">
+      <obj_property name="ElementShortName">[1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_CYBERcobra/dut/register_file_inst/rf_mem[2]" type="array">
+      <obj_property name="ElementShortName">[2][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
    </wvobject>
 </wave_config>

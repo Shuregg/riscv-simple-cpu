@@ -33,7 +33,7 @@ module program_counter(
   //initial pc_o = 32'b0;
   
   
-  always_ff @(posedge clk_i) begin
+  always_ff @(posedge clk_i or posedge rst_i) begin
     if(rst_i)
       pc_o <= 32'b0;
     else

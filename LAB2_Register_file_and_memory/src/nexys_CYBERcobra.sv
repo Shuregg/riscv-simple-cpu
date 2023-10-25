@@ -10,7 +10,7 @@ module nexys_CYBERcobra_dz(
     );
     
     CYBERcobra dut(
-    .clk_i(btn),
+    .clk_i(CLK100),
     .rst_i(!resetn),
     .sw_i(SW[15:0]),
     .out_o(out)

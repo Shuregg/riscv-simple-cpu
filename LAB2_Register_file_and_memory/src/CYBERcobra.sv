@@ -51,10 +51,11 @@ module CYBERcobra(
   
 //Optional wires
   logic        jump;
-  logic        branch;
+  logic        branch_and_flag;
   logic [31:0] pc_trans_value;
   logic [31:0] pc_adder_in;
   
+  logic        jump_or_branch;
   program_counter program_counter_inst
   (.clk_i(clk_i), 
    .rst_i(rst_i), 
@@ -62,21 +63,24 @@ module CYBERcobra(
    .pc_o(PC_out)
    );
   
-  assign jump   = instruction[31];
-  assign branch     = instruction[30] & ALU_flag_out;
+  assign jump       = instruction[31];
+  assign branch_and_flag     = instruction[30] & ALU_flag_out;
   
-  assign pc_trans_value[9:0]   = {instruction[12:5], 2'b00};
-  assign pc_trans_value[31:10] = {22{instruction[12]}};
+  assign pc_trans_value   = {{22{instruction[12]}}, {instruction[12:5], 2'b00}};
   
+  assign jump_or_branch        = jump || branch_and_flag;
   assign out_o                 = RF_RD1_out; //!!!!!!!!!!!!!
   
   //assign pc_adder_in = (jump | branch) ? pc_trans_value : pc_trans_const;
   always_comb begin
-    if(jump || branch)
-      pc_adder_in <= pc_trans_value;
-    else
-      pc_adder_in <= pc_trans_const;
+    case(jump_or_branch)
+      1'b1:
+        pc_adder_in <= pc_trans_value;
+      1'b0:
+        pc_adder_in <= pc_trans_const;
+    endcase
   end
+  
   //assign PC_in = pc_adder_in;
   fulladder32 PC_adder
   (.a_i(PC_out)     ,
@@ -85,6 +89,9 @@ module CYBERcobra(
    .sum_o(PC_in)    ,
    .carry_o()
   );
+//  always_comb begin
+//    PC_in <= PC_out + pc_adder_in;
+//  end
   
   instr_mem instruction_memory_inst
   (.addr_i(PC_out),
@@ -121,8 +128,7 @@ module CYBERcobra(
   always_comb begin
     case(instruction[29:28])
       2'b00: begin
-        RF_WD_in[22:0]  <= instruction[27:5];
-        RF_WD_in[31:23] <= {9{instruction[27]}};
+        RF_WD_in  <= {{9{instruction[27]}}, instruction[27:5]} ;
       end
       
       2'b01: begin
@@ -130,8 +136,7 @@ module CYBERcobra(
       end
       
       2'b10: begin
-        RF_WD_in[15:0]  <= sw_i;
-        RF_WD_in[31:16] <= {16{sw_i[15]}};
+        RF_WD_in  <= {{16{sw_i[15]}}, sw_i};
       end
       
       2'b11:
