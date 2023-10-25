@@ -12,13 +12,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="9778666fs"></ZoomStartTime>
-      <ZoomEndTime time="10056267fs"></ZoomEndTime>
-      <Cursor1Time time="10010000fs"></Cursor1Time>
+      <ZoomStartTime time="738637fs"></ZoomStartTime>
+      <ZoomEndTime time="795638fs"></ZoomEndTime>
+      <Cursor1Time time="400000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="195"></NameColumnWidth>
-      <ValueColumnWidth column_width="206"></ValueColumnWidth>
+      <ValueColumnWidth column_width="201"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="23" />
    <wvobject fp_name="/tb_CYBERcobra/OUT" type="array">
@@ -65,7 +65,7 @@
       <obj_property name="ObjectShortName">RF_RD1_out[31:0]</obj_property>
       <obj_property name="CustomSignalColor">#FFFF00</obj_property>
       <obj_property name="UseCustomSignalColor">true</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/tb_CYBERcobra/dut/RF_RD2_out" type="array">
       <obj_property name="ElementShortName">RF_RD2_out[31:0]</obj_property>
