@@ -11,8 +11,8 @@ module instr_mem(
 //  initial $readmemh("program.txt", ROM);
 //  initial $readmemh("example.txt", ROM);
 //  initial $readmemh("demo.txt", ROM);
-  initial $readmemh("numberDifference.txt", ROM);
-  
+  initial $readmemh("numDifference.txt", ROM);
+//    initial $readmemh("program.txt", ROM);
   assign byte_addr = addr_i >> 2; //addr/4
   assign address_is_valid = (addr_i <= 4*cells_value-1); 
   
