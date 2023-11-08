@@ -38,7 +38,7 @@ module decoder_riscv (
     b_sel_o     <= 3'b0;
     wb_sel_o    <= 2'b0;
     mret_o      <= 1'b0;
-    
+    branch_o    <= 1'b0;
     if(opcode[1:0] != 2'b11)
       illegal_instr_o <= 1'b1;
     else begin
