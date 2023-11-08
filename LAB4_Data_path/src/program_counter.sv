@@ -34,11 +34,11 @@ module program_counter(
   //initial pc_o = 32'b0;
   
   
-  always_ff @(posedge clk_i or posedge rst_i or posedge en_i) begin
-    if(!en_i) //if not enable
-      pc_o <= pc_o;
-    else if(rst_i)
+  always_ff @(posedge clk_i or posedge rst_i) begin
+    if(rst_i) //if not enable
       pc_o <= 32'b0;
+    else if(!en_i)
+      pc_o <= pc_o;
     else
       pc_o <= pc_i;
   end
