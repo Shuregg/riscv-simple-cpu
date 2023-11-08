@@ -14,19 +14,23 @@ module riscv_unit(
   logic [31:0]  rd;  
   
   logic         stall;
+  logic         nstall_and_mem_req;
+  
+  assign nstall_and_mem_req = !stall && mem_req;
+  
   
   always_ff @(posedge clk_i or posedge rst_i) begin
     if(rst_i)
-      
+      stall <= 1'b0;
     else
-      
+      stall <= nstall_and_mem_req;
   end
   
-  riscv_core core_inst
+  riscv_core core
   (
     .clk_i(clk_i),
     .rst_i(rst_i),
-    .stall_i(),
+    .stall_i(nstall_and_mem_req),
     .instr_i(instr),
     .mem_rd_i(rd), 
     

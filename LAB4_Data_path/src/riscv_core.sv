@@ -70,6 +70,7 @@ module riscv_core (
   logic         JAL_OR_BAF;             //JAL | BAF
   logic [31:0]  BRANCH_MUX_OUT;         //the mux controlled by MDEC_B (branch signal)
   logic [31:0]  JAL_OR_BAF_MUX_OUT;     //the mux controlled by (MDEC_JAL | (MDEC_B & ALU_FLAG_OUT)) signal (branch or jump signal)
+  logic [31:0]  RD1_PLUS_imm_I;
     
 /*===========================ASSIGNING===========================*/ 
 //ASSIGNING (IMMEDIATE)
@@ -113,7 +114,8 @@ end
   assign JAL_OR_BAF_MUX_OUT = JAL_OR_BAF ? BRANCH_MUX_OUT : PC_INCR;    //
 
   assign INCR_PC_IN         = PC_OUT + JAL_OR_BAF_MUX_OUT;              //next PC value if MDEC_JALR == 0
-  assign JALR_PC_IN = {{(RF_RD1_OUT + imm_I)}[31:1], 1'b0};             //next PC value if MDEC_JALR == 1
+  assign RD1_PLUS_imm_I = RF_RD1_OUT + imm_I;
+  assign JALR_PC_IN = {RD1_PLUS_imm_I[31:1], 1'b0};             //next PC value if MDEC_JALR == 1
   
   assign PC_IN              = MDEC_JALR ? JALR_PC_IN : INCR_PC_IN;      //next PC value
 
