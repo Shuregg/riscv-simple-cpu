@@ -31,6 +31,7 @@ module tb_riscv_unit();
 
     initial clk = 0;
     always #10 clk = ~clk;
+    
     initial begin
         $display( "\nStart test: \n\n==========================\nCLICK THE BUTTON 'Run All'\n==========================\n"); $stop();
         rst = 1;
