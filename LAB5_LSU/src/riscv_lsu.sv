@@ -33,7 +33,7 @@ module riscv_lsu(
   assign mem_req_o    = core_req_i;
   assign mem_we_o     = core_we_i;
   assign mem_addr_o   = core_addr_i;
-  assign core_stall_o = ( !(stall_reg && mem_ready_i) && core_req_i); //???
+//  assign core_stall_o = ( !(stall_reg && mem_ready_i) && core_req_i); //???
 
   //STORE BYTE/HALF/WORD
   always_comb begin
@@ -87,13 +87,13 @@ module riscv_lsu(
     end
   end
 
-  always_ff @(clk_i or posedge rst_i) begin
+  always_ff @(posedge clk_i or posedge rst_i) begin
     if(rst_i) begin
       stall_reg     <= 1'b0;
-//      core_stall_o  <= 1'b0;
+      core_stall_o  <= 1'b0;
     end else begin
       stall_reg     <= ( !(stall_reg && mem_ready_i) && core_req_i);
-//      core_stall_o  <= stall_reg;
+      core_stall_o  <= ( !(stall_reg && mem_ready_i) && core_req_i);
     end
   end
 
