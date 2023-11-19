@@ -67,6 +67,7 @@ module riscv_lsu(
             2'b01:  core_rd_o <= { {24{mem_rd_i[15]}}, mem_rd_i[15: 8]};
             2'b10:  core_rd_o <= { {24{mem_rd_i[23]}}, mem_rd_i[23:16]};
             2'b11:  core_rd_o <= { {24{mem_rd_i[31]}}, mem_rd_i[31:24]};
+            default: begin end
           endcase
         end 
         LDST_H  : core_rd_o <= core_addr_i[1] ? { {16{mem_rd_i[31]}}, mem_rd_i[31:16]} : { {16{mem_rd_i[15]}}, mem_rd_i[15:0]};
@@ -79,6 +80,7 @@ module riscv_lsu(
             2'b01:  core_rd_o <= { 24'b0, mem_rd_i[15: 8]};
             2'b10:  core_rd_o <= { 24'b0, mem_rd_i[23:16]};
             2'b11:  core_rd_o <= { 24'b0, mem_rd_i[31:24]};
+            default: begin end
           endcase
         end
         

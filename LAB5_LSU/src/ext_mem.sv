@@ -67,7 +67,7 @@ module ext_mem(
 
   //WRITE
   always_ff @(posedge clk_i) begin
-    if(mem_req_i && write_enable_i) begin
+    if(mem_req_i && write_enable_i && address_is_valid) begin
       RAM[byte_addr] <= {byte_3, byte_2, byte_1, byte_0};
     end
   end
