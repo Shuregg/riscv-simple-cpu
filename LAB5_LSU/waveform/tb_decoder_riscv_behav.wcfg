@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_decoder_riscv_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_opcodes_pkg" />
+            <top_module name="csr_pkg" />
+            <top_module name="glbl" />
+            <top_module name="riscv_pkg" />
+            <top_module name="tb_decoder_riscv" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="861100fs"></ZoomStartTime>
+      <ZoomEndTime time="925901fs"></ZoomEndTime>
+      <Cursor1Time time="879000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="195"></NameColumnWidth>
+      <ValueColumnWidth column_width="141"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/tb_decoder_riscv/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/a_sel" type="array">
+      <obj_property name="ElementShortName">a_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">a_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/b_sel" type="array">
+      <obj_property name="ElementShortName">b_sel[2:0]</obj_property>
+      <obj_property name="ObjectShortName">b_sel[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/alu_op" type="array">
+      <obj_property name="ElementShortName">alu_op[4:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_op[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/csr_op" type="array">
+      <obj_property name="ElementShortName">csr_op[2:0]</obj_property>
+      <obj_property name="ObjectShortName">csr_op[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/csr_we" type="logic">
+      <obj_property name="ElementShortName">csr_we</obj_property>
+      <obj_property name="ObjectShortName">csr_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_req" type="logic">
+      <obj_property name="ElementShortName">mem_req</obj_property>
+      <obj_property name="ObjectShortName">mem_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_size" type="array">
+      <obj_property name="ElementShortName">mem_size[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_size[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/gpr_we" type="logic">
+      <obj_property name="ElementShortName">gpr_we</obj_property>
+      <obj_property name="ObjectShortName">gpr_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/wb_sel" type="array">
+      <obj_property name="ElementShortName">wb_sel[1:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_sel[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/illegal_instr" type="logic">
+      <obj_property name="ElementShortName">illegal_instr</obj_property>
+      <obj_property name="ObjectShortName">illegal_instr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/branch" type="logic">
+      <obj_property name="ElementShortName">branch</obj_property>
+      <obj_property name="ObjectShortName">branch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/jal" type="logic">
+      <obj_property name="ElementShortName">jal</obj_property>
+      <obj_property name="ObjectShortName">jal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/jalr" type="logic">
+      <obj_property name="ElementShortName">jalr</obj_property>
+      <obj_property name="ObjectShortName">jalr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mret" type="logic">
+      <obj_property name="ElementShortName">mret</obj_property>
+      <obj_property name="ObjectShortName">mret</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/a_sel_miss" type="logic">
+      <obj_property name="ElementShortName">a_sel_miss</obj_property>
+      <obj_property name="ObjectShortName">a_sel_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/b_sel_miss" type="logic">
+      <obj_property name="ElementShortName">b_sel_miss</obj_property>
+      <obj_property name="ObjectShortName">b_sel_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/alu_op_miss" type="logic">
+      <obj_property name="ElementShortName">alu_op_miss</obj_property>
+      <obj_property name="ObjectShortName">alu_op_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/csr_op_miss" type="logic">
+      <obj_property name="ElementShortName">csr_op_miss</obj_property>
+      <obj_property name="ObjectShortName">csr_op_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/csr_we_miss" type="logic">
+      <obj_property name="ElementShortName">csr_we_miss</obj_property>
+      <obj_property name="ObjectShortName">csr_we_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_req_miss" type="logic">
+      <obj_property name="ElementShortName">mem_req_miss</obj_property>
+      <obj_property name="ObjectShortName">mem_req_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_we_miss" type="logic">
+      <obj_property name="ElementShortName">mem_we_miss</obj_property>
+      <obj_property name="ObjectShortName">mem_we_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mem_size_miss" type="logic">
+      <obj_property name="ElementShortName">mem_size_miss</obj_property>
+      <obj_property name="ObjectShortName">mem_size_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/gpr_we_miss" type="logic">
+      <obj_property name="ElementShortName">gpr_we_miss</obj_property>
+      <obj_property name="ObjectShortName">gpr_we_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/wb_sel_miss" type="logic">
+      <obj_property name="ElementShortName">wb_sel_miss</obj_property>
+      <obj_property name="ObjectShortName">wb_sel_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/illegal_miss" type="logic">
+      <obj_property name="ElementShortName">illegal_miss</obj_property>
+      <obj_property name="ObjectShortName">illegal_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/branch_miss" type="logic">
+      <obj_property name="ElementShortName">branch_miss</obj_property>
+      <obj_property name="ObjectShortName">branch_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/jal_miss" type="logic">
+      <obj_property name="ElementShortName">jal_miss</obj_property>
+      <obj_property name="ObjectShortName">jal_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/jalr_miss" type="logic">
+      <obj_property name="ElementShortName">jalr_miss</obj_property>
+      <obj_property name="ObjectShortName">jalr_miss</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/mret_miss" type="logic">
+      <obj_property name="ElementShortName">mret_miss</obj_property>
+      <obj_property name="ObjectShortName">mret_miss</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/opcode" type="array">
+      <obj_property name="ElementShortName">opcode[4:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/X" type="array">
+      <obj_property name="ElementShortName">X[31:0]</obj_property>
+      <obj_property name="ObjectShortName">X[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/V" type="array">
+      <obj_property name="ElementShortName">V[7:0]</obj_property>
+      <obj_property name="ObjectShortName">V[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/error" type="array">
+      <obj_property name="ElementShortName">error[31:0]</obj_property>
+      <obj_property name="ObjectShortName">error[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/delay" type="array">
+      <obj_property name="ElementShortName">delay[31:0]</obj_property>
+      <obj_property name="ObjectShortName">delay[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/cycle" type="array">
+      <obj_property name="ElementShortName">cycle[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cycle[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/dut/funct3" type="array">
+      <obj_property name="ElementShortName">funct3[2:0]</obj_property>
+      <obj_property name="ObjectShortName">funct3[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/dut/funct7" type="array">
+      <obj_property name="ElementShortName">funct7[6:0]</obj_property>
+      <obj_property name="ObjectShortName">funct7[6:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_decoder_riscv/error" type="array">
+      <obj_property name="ElementShortName">error[31:0]</obj_property>
+      <obj_property name="ObjectShortName">error[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
