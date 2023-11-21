@@ -92,5 +92,4 @@ module csr_controller(
       default      : begin end
     endcase
   end
-
 endmodule
