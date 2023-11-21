@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_csr_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="csr_pkg" />
+            <top_module name="glbl" />
+            <top_module name="tb_csr" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="75000fs"></ZoomStartTime>
+      <ZoomEndTime time="134451fs"></ZoomEndTime>
+      <Cursor1Time time="100000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="199"></NameColumnWidth>
+      <ValueColumnWidth column_width="148"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="20" />
+   <wvobject fp_name="/tb_csr/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/trap_i" type="logic">
+      <obj_property name="ElementShortName">trap_i</obj_property>
+      <obj_property name="ObjectShortName">trap_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/opcode_i" type="array">
+      <obj_property name="ElementShortName">opcode_i[2:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode_i[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/addr_i" type="array">
+      <obj_property name="ElementShortName">addr_i[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_i[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/pc_i" type="array">
+      <obj_property name="ElementShortName">pc_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/mcause_i" type="array">
+      <obj_property name="ElementShortName">mcause_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mcause_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/rs1_data_i" type="array">
+      <obj_property name="ElementShortName">rs1_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_data_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/imm_data_i" type="array">
+      <obj_property name="ElementShortName">imm_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_data_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/write_enable_i" type="logic">
+      <obj_property name="ElementShortName">write_enable_i</obj_property>
+      <obj_property name="ObjectShortName">write_enable_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/read_data_o" type="array">
+      <obj_property name="ElementShortName">read_data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/mie_o" type="array">
+      <obj_property name="ElementShortName">mie_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mie_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/mepc_o" type="array">
+      <obj_property name="ElementShortName">mepc_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mepc_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/mtvec_o" type="array">
+      <obj_property name="ElementShortName">mtvec_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mtvec_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/err_count" type="array">
+      <obj_property name="ElementShortName">err_count[31:0]</obj_property>
+      <obj_property name="ObjectShortName">err_count[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/not_stopped" type="logic">
+      <obj_property name="ElementShortName">not_stopped</obj_property>
+      <obj_property name="ObjectShortName">not_stopped</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/data_ref" type="array">
+      <obj_property name="ElementShortName">data_ref[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_ref[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/pc_ref" type="array">
+      <obj_property name="ElementShortName">pc_ref[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_ref[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/mcause_ref" type="array">
+      <obj_property name="ElementShortName">mcause_ref[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mcause_ref[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_csr/addr" type="array">
+      <obj_property name="ElementShortName">addr[0:4][11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[0:4][11:0]</obj_property>
+   </wvobject>
+</wave_config>
