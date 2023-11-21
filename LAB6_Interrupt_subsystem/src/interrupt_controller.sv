@@ -24,5 +24,4 @@ module interrupt_controller (
   
   register32 exc_h    (.clk_i(clk_i), .rst_i(rst_i), .en_i(1'b1),  .data_i(exc_reg_data_i), .data_o(exc_reg_data_o));
   register32 irq_h    (.clk_i(clk_i), .rst_i(rst_i), .en_i(1'b1),  .data_i(irq_reg_data_i), .data_o(irq_reg_data_o));
-
 endmodule
