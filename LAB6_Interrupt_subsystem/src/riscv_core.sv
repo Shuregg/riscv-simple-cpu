@@ -97,7 +97,8 @@ module riscv_core (
 
 //ADDITIONAL WIRES
   logic         TRAP;
-  
+  logic [31:0]  wb_data;
+
 /*===========================ASSIGNING===========================*/ 
 //ASSIGNING (IMMEDIATE)
   assign imm_I = {{20{instr_i[31]}}, instr_i[31:20]}; //20+12=32
@@ -112,8 +113,14 @@ module riscv_core (
   assign RF_RA1_IN  = instr_i[19:15];
   assign RF_RA2_IN  = instr_i[24:20];
   assign RF_WA_IN   = instr_i[11: 7];
-  assign RF_WD_IN   = MDEC_WB_SEL ? mem_rd_i : ALU_RES_OUT;
+  // assign RF_WD_IN   = MDEC_WB_SEL ? mem_rd_i : ALU_RES_OUT;
 
+  //wb_data assigning
+  case(MDEC_WB_SEL)
+    WB_EX_RESULT: wb_data <= ALU_RES_OUT;
+    WB_LSU_DATA : wb_data <= mem_rd_i;
+    WB_CSR_DATA : wb_data <= CSR_CONTR_READ_DATA_OUT;
+  endcase
 //ASSIGNING (ALU)
   always_comb begin
     case(MDEC_A_SEL)  //choosing operand A (mux)
@@ -197,7 +204,7 @@ module riscv_core (
    .read_addr1_i(RF_RA1_IN) ,
    .read_addr2_i(RF_RA2_IN) ,
    .write_addr_i(RF_WA_IN)  ,
-   .write_data_i(RF_WD_IN)  ,
+   .write_data_i(wb_data)  ,
    .read_data1_o(RF_RD1_OUT),
    .read_data2_o(RF_RD2_OUT)
   );
