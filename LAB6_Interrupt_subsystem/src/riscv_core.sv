@@ -116,11 +116,13 @@ module riscv_core (
   // assign RF_WD_IN   = MDEC_WB_SEL ? mem_rd_i : ALU_RES_OUT;
 
   //wb_data assigning
-  case(MDEC_WB_SEL)
-    WB_EX_RESULT: wb_data <= ALU_RES_OUT;
-    WB_LSU_DATA : wb_data <= mem_rd_i;
-    WB_CSR_DATA : wb_data <= CSR_CONTR_READ_DATA_OUT;
-  endcase
+  always_comb begin
+    case(MDEC_WB_SEL)
+      WB_EX_RESULT: wb_data <= ALU_RES_OUT;
+      WB_LSU_DATA : wb_data <= mem_rd_i;
+      WB_CSR_DATA : wb_data <= CSR_CONTR_READ_DATA_OUT;
+    endcase
+  end
 //ASSIGNING (ALU)
   always_comb begin
     case(MDEC_A_SEL)  //choosing operand A (mux)
