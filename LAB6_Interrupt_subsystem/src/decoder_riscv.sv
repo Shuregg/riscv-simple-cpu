@@ -403,12 +403,20 @@ module decoder_riscv (
           wb_sel_o  <= WB_CSR_DATA;
           case(funct3)
             3'b000: begin   //mret (machine return)
-              illegal_instr_o <= 1'b1;
+              illegal_instr_o <= 1'b0;
               gpr_we_o        <= 1'b0; //?
               csr_we_o        <= 1'b0; //?
               case(funct7)
-                7'h00:  illegal_instr_o <= 1'b1;//environment call (ecall)
-                7'h01:  illegal_instr_o <= 1'b1;//environment break (ebreak)
+                7'h00: begin  
+                  illegal_instr_o <= 1'b1;  //environment call (ecall)
+                  gpr_we_o        <= 1'b0;
+                  csr_we_o        <= 1'b0;
+                end
+                7'h01: begin  
+                  illegal_instr_o <= 1'b1;//environment break (ebreak)
+                  gpr_we_o        <= 1'b0;
+                  csr_we_o        <= 1'b0;
+                end
                 7'h18: begin
                   mret_o          <= 1'b1;
                   illegal_instr_o <= 1'b0;
