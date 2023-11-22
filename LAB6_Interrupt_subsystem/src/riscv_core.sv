@@ -79,9 +79,6 @@ module riscv_core (
   //////////////////////////////
 //  logic [31:0]  
 
-
-
-    
 //IRQ CONTROLLER WIRES
   logic         IRQ_CONTR_IRQ_RET_OUT;
   logic [31:0]  IRQ_CONTR_IRQ_CAUSE_OUT;
@@ -153,7 +150,6 @@ module riscv_core (
   assign RD1_PLUS_imm_I = RF_RD1_OUT + imm_I;
   
   assign JALR_PC_IN = {RD1_PLUS_imm_I[31:1], 1'b0};                     //next PC value if MDEC_JALR == 1
-  
   
   // assign JALR_MUX       = MDEC_JALR ? JALR_PC_IN : INCR_PC_IN;      
   // assign MTVEC_PC_IN    = TRAP ? CSR_CONTR_MTVEC_OUT : JALR_MUX;
