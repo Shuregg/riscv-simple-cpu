@@ -77,13 +77,13 @@ module riscv_core (
   logic [31:0]  JAL_OR_BAF_MUX_OUT;     //the mux controlled by (MDEC_JAL | (MDEC_B & ALU_FLAG_OUT)) signal (branch or jump signal)
   logic [31:0]  RD1_PLUS_imm_I;
   //////////////////////////////
-  logic [31:0]  
+//  logic [31:0]  
 
 
 
     
 //IRQ CONTROLLER WIRES
-  logic         IRQ_CONTR_IRQ_RET_OUT
+  logic         IRQ_CONTR_IRQ_RET_OUT;
   logic [31:0]  IRQ_CONTR_IRQ_CAUSE_OUT;
   logic         IRQ_CONTR_IRQ_OUT;
 
@@ -164,6 +164,8 @@ module riscv_core (
 //ASSIGNING (CSR CONTROLLER WIRES)
   assign CSR_CONTR_MCAUSE_IN = MDEC_ILLEGAL_INSTR ? ILL_INSTR_CAUSE_CODE : IRQ_CONTR_IRQ_CAUSE_OUT;
 
+//ASSIGNING (IRQ CONTROLLER WIRES)
+  assign irq_ret_o = IRQ_CONTR_IRQ_RET_OUT;
 
 /*===========================INSTANCES===========================*/ 
 //MAIN DECODER INSTANCE
@@ -221,7 +223,7 @@ module riscv_core (
   );
 
 //IRQ CONTROLLER INSTANCE
-  irq_controller  irq_controller_inst
+  interrupt_controller  irq_controller_inst
   (
     .clk_i(clk_i),
     .rst_i(rst_i),
