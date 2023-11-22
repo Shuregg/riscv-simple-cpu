@@ -407,8 +407,8 @@ module decoder_riscv (
               gpr_we_o        <= 1'b0; //?
               csr_we_o        <= 1'b0; //?
               case(funct7)
-                7'h00:  illegal_instr_o <= 1'b1;//environment call
-                7'h01:  illegal_instr_o <= 1'b1;//environment break
+                7'h00:  illegal_instr_o <= 1'b1;//environment call (ecall)
+                7'h01:  illegal_instr_o <= 1'b1;//environment break (ebreak)
                 7'h18: begin
                   mret_o          <= 1'b1;
                   illegal_instr_o <= 1'b0;
