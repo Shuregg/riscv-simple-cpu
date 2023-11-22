@@ -9,7 +9,8 @@ module instr_mem(
   logic         address_is_valid;
   
 //  initial $readmemh("sqareOfNum.txt", ROM);
-  initial $readmemh("program.txt", ROM);
+//  initial $readmemh("program.txt", ROM);
+  initial $readmemh("irq_program.txt", ROM);
   assign byte_addr = addr_i >> 2; //addr/4
   assign address_is_valid = (addr_i <= 4*cells_value-1); 
   
