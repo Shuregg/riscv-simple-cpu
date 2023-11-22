@@ -1,6 +1,8 @@
 module riscv_unit(
-  input  logic        clk_i,
-  input  logic        rst_i
+  input logic       clk_i,
+  input logic       rst_i
+//  ,input logic       irq_req_i
+//  ,input logic       irq_ret_o
 );
 //Core and Instr mem wires
   logic [31:0]  instr;
@@ -12,17 +14,26 @@ module riscv_unit(
   logic [31:0]  rd;  
   logic         stall;
   logic [2:0]   mem_size;
+  
+  logic         irq_req;
+  logic         irq_ret;
 //Data mem wires
   logic [31:0]  data_mem_rd_o;
   logic         data_mem_ready_o;
 //  LSU wires
   logic         lsu_mem_req_o;
-  logic         lsu_we_o;
+//  logic         lsu_we_o;
   logic [31:0]  lsu_mem_wd_o;
   logic [31:0]  lsu_mem_addr_o;
   logic         lsu_mem_we_o;
   logic [3:0]   lsu_mem_be_o;
   logic [31:0]  lsu_mem_rd_i; 
+
+  instr_mem instr_mem_inst
+  (
+    .addr_i(instr_addr),
+    .read_data_o(instr)
+  );
 
   riscv_core core
   (
@@ -32,18 +43,16 @@ module riscv_unit(
     .instr_i(instr),
     .mem_rd_i(rd), 
     
+    .irq_req_i(irq_req),
+    
     .instr_addr_o(instr_addr),
     .mem_addr_o(mem_addr),
     .mem_size_o(mem_size),
     .mem_req_o(mem_req),
     .mem_we_o(mem_we),
-    .mem_wd_o(mem_wd)
-  );
-  
-  instr_mem instr_mem_inst
-  (
-    .addr_i(instr_addr),
-    .read_data_o(instr)
+    .mem_wd_o(mem_wd),
+    
+    .irq_ret_o(irq_ret)
   );
   
   riscv_lsu LSU_inst
@@ -59,7 +68,7 @@ module riscv_unit(
     .core_stall_o(stall),
   // Data Memory interface
     .mem_req_o(lsu_mem_req_o),
-    .mem_we_o(lsu_we_o),
+    .mem_we_o(lsu_mem_we_o),
     .mem_be_o(lsu_mem_be_o),
     .mem_addr_o(lsu_mem_addr_o),
     .mem_wd_o(lsu_mem_wd_o),
@@ -71,7 +80,7 @@ module riscv_unit(
   (
     .clk_i(clk_i),
     .mem_req_i(lsu_mem_req_o),
-    .write_enable_i(lsu_we_o),
+    .write_enable_i(lsu_mem_we_o),
     .byte_enable_i(lsu_mem_be_o),           //!!! !!! !!!
     .addr_i(lsu_mem_addr_o),
     .write_data_i(lsu_mem_wd_o),
