@@ -61,7 +61,8 @@ module csr_controller(
       CSR_RSI:  CSR_DATA_I <=  imm_data_i | read_data_o;       //= 3'b110;
       CSR_RCI:  CSR_DATA_I <= ~imm_data_i & read_data_o;       //= 3'b111;
       default: begin
-        CSR_DATA_I <=  rs1_data_i; //???
+//        CSR_DATA_I <=  rs1_data_i; //???
+        CSR_DATA_I <=  0; //???
       end
     endcase
   end
@@ -77,20 +78,21 @@ module csr_controller(
       MIE_ADDR     :  MIE_WE      <= write_enable_i;               //= 12'h304;
       MTVEC_ADDR   :  MTVEC_WE    <= write_enable_i;               //= 12'h305;
       MSCRATCH_ADDR:  MSCRATCH_WE <= write_enable_i;               //= 12'h340;
-      MEPC_ADDR    :  MEPC_WE     <= (write_enable_i);     //= 12'h341;
-      MCAUSE_ADDR  :  MCAUSE_WE   <= (write_enable_i );     //= 12'h342;
+      MEPC_ADDR    :  MEPC_WE     <= write_enable_i;     //= 12'h341;
+      MCAUSE_ADDR  :  MCAUSE_WE   <= write_enable_i;     //= 12'h342;
 //      default      : begin end
  
     endcase    
   end
 
-  //CSR Registers init
+//  CSR Registers init
   register32 MIE_REG        (.clk_i(clk_i), .rst_i(rst_i), .en_i(MIE_WE)      ,  .data_i(MIE_DATA_I)      ,  .data_o(MIE_DATA_O)      );
   register32 MTVEC_REG      (.clk_i(clk_i), .rst_i(rst_i), .en_i(MTVEC_WE)    ,  .data_i(MTVEC_DATA_I)    ,  .data_o(MTVEC_DATA_O)    );
   register32 MSCRATCH_REG   (.clk_i(clk_i), .rst_i(rst_i), .en_i(MSCRATCH_WE) ,  .data_i(MSCRATCH_DATA_I) ,  .data_o(MSCRATCH_DATA_O) );
   register32 MEPC_REG       (.clk_i(clk_i), .rst_i(rst_i), .en_i(MEPC_WE || trap_i)     ,  .data_i(MEPC_DATA_I)     ,  .data_o(MEPC_DATA_O)     );
   register32 MCAUSE_REG     (.clk_i(clk_i), .rst_i(rst_i), .en_i(MCAUSE_WE || trap_i)   ,  .data_i(MCAUSE_DATA_I)   ,  .data_o(MCAUSE_DATA_O)   );
 
+  
   always_comb begin
     case(addr_i)
       MIE_ADDR     :  read_data_o <=  MIE_DATA_O;            //= 12'h304;
@@ -99,7 +101,7 @@ module csr_controller(
       MEPC_ADDR    :  read_data_o <=  MEPC_DATA_O;           //= 12'h341;
       MCAUSE_ADDR  :  read_data_o <=  MCAUSE_DATA_O;         //= 12'h342;
       default      : begin
-        read_data_o <=  32'hdead_dead; 
+        read_data_o <=  32'b0; 
       end
     endcase
   end
