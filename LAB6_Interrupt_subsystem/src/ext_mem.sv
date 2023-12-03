@@ -56,12 +56,12 @@ module ext_mem(
   //READ
   always_ff @(posedge clk_i) begin
     if(mem_req_i == 0 || write_enable_i == 1)
-      read_data_o <= 32'hfa11_1eaf;
+      read_data_o <= read_data_o;
     else begin
       if (mem_req_i && address_is_valid)
         read_data_o <= RAM[byte_addr];
       else
-        read_data_o <= 32'hdead_beef;
+        read_data_o <= read_data_o;
     end
   end
 
