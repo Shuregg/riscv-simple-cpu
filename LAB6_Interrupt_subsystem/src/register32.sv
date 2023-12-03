@@ -28,11 +28,13 @@ module register32(
     output logic [31:0]     data_o
     );
 
-    always_ff @(posedge clk_i or posedge rst_i) begin
-        if(rst_i)       data_o <= 32'b0;
-        else begin
-            if(en_i)    data_o <= data_i;
-            else        data_o <= data_o;
+    always_ff @(posedge clk_i) begin
+        if(rst_i) begin
+            data_o <= 32'b0;
+        end else if(en_i) begin
+            data_o <= data_i;
+        end else begin
+            data_o <= data_o;
         end 
     end
 endmodule
