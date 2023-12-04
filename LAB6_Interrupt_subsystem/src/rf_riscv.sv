@@ -31,7 +31,7 @@ module rf_riscv(
         5'b0:       rf_mem[write_addr_i] <= 32'b0;
         default:    rf_mem[write_addr_i] <= write_data_i;
       endcase
-    else
-      rf_mem[write_addr_i] <= rf_mem[write_addr_i];
+//    else
+//      rf_mem[write_addr_i] <= rf_mem[write_addr_i];
   end
 endmodule
