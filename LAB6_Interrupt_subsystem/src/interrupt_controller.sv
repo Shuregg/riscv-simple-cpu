@@ -46,7 +46,7 @@ module interrupt_controller (
   // assign  irq_reg_data_i =  !mret_and_not_exc_or_excreg &&  ;
 
   
-  always_ff @ (posedge clk_i or posedge rst_i) begin
+  always_ff @ (posedge clk_i) begin
     if(rst_i) begin
       exc_h_Q <=  1'b0;
       irq_h_Q <=  1'b0;    

@@ -53,6 +53,7 @@ module csr_controller(
   assign mepc_o   = MEPC_DATA_O;
 
   always_comb begin
+    CSR_DATA_I <=  0; //???
     case(opcode_i)
       CSR_RW :  CSR_DATA_I <=  rs1_data_i;                     //= 3'b001;
       CSR_RS :  CSR_DATA_I <=  rs1_data_i | read_data_o;       //= 3'b010;
@@ -60,28 +61,22 @@ module csr_controller(
       CSR_RWI:  CSR_DATA_I <=  imm_data_i;                     //= 3'b101;
       CSR_RSI:  CSR_DATA_I <=  imm_data_i | read_data_o;       //= 3'b110;
       CSR_RCI:  CSR_DATA_I <= ~imm_data_i & read_data_o;       //= 3'b111;
-      default: begin
-//        CSR_DATA_I <=  rs1_data_i; //???
-        CSR_DATA_I <=  0; //???
-      end
     endcase
   end
 
   //DEMUX
   always_comb begin
-    MIE_WE      <= 1'b0;
-    MTVEC_WE    <= 1'b0;
-    MSCRATCH_WE <= 1'b0;
-    MEPC_WE     <= 1'b0;
-    MCAUSE_WE   <= 1'b0;
+     MIE_WE      <= 1'b0;
+     MTVEC_WE    <= 1'b0;
+     MSCRATCH_WE <= 1'b0;
+     MEPC_WE     <= 1'b0;
+     MCAUSE_WE   <= 1'b0;
     case(addr_i)
       MIE_ADDR     :  MIE_WE      <= write_enable_i;               //= 12'h304;
       MTVEC_ADDR   :  MTVEC_WE    <= write_enable_i;               //= 12'h305;
       MSCRATCH_ADDR:  MSCRATCH_WE <= write_enable_i;               //= 12'h340;
       MEPC_ADDR    :  MEPC_WE     <= write_enable_i;     //= 12'h341;
       MCAUSE_ADDR  :  MCAUSE_WE   <= write_enable_i;     //= 12'h342;
-//      default      : begin end
- 
     endcase    
   end
 
@@ -94,15 +89,13 @@ module csr_controller(
 
   
   always_comb begin
+    read_data_o <=  32'b0; 
     case(addr_i)
       MIE_ADDR     :  read_data_o <=  MIE_DATA_O;            //= 12'h304;
       MTVEC_ADDR   :  read_data_o <=  MTVEC_DATA_O;          //= 12'h305;
       MSCRATCH_ADDR:  read_data_o <=  MSCRATCH_DATA_O;       //= 12'h340;
       MEPC_ADDR    :  read_data_o <=  MEPC_DATA_O;           //= 12'h341;
       MCAUSE_ADDR  :  read_data_o <=  MCAUSE_DATA_O;         //= 12'h342;
-      default      : begin
-        read_data_o <=  32'b0; 
-      end
     endcase
   end
 endmodule

@@ -114,14 +114,18 @@ module riscv_core (
 
   //wb_data assigning
   always_comb begin
+    wb_data <= 32'b0; //???
     case(MDEC_WB_SEL)
       WB_EX_RESULT: wb_data <= ALU_RES_OUT;
       WB_LSU_DATA : wb_data <= mem_rd_i;
       WB_CSR_DATA : wb_data <= CSR_CONTR_READ_DATA_OUT;
+//      default:      wb_data <= wb_data; //???
     endcase
   end
 //ASSIGNING (ALU)
   always_comb begin
+    ALU_A_IN    <=  2'b11;          //non-existent code
+    ALU_B_IN    <=  3'b111;         //non-existent code
     case(MDEC_A_SEL)  //choosing operand A (mux)
       OP_A_RS1:       ALU_A_IN <= RF_RD1_OUT;
       OP_A_CURR_PC:   ALU_A_IN <= PC_OUT;
