@@ -52,8 +52,9 @@ module csr_controller(
   assign mtvec_o  = MTVEC_DATA_O;
   assign mepc_o   = MEPC_DATA_O;
 
+  //WRITE CSR DATA
   always_comb begin
-    CSR_DATA_I <=  0; //???
+    CSR_DATA_I <=  read_data_o; //???
     case(opcode_i)
       CSR_RW :  CSR_DATA_I <=  rs1_data_i;                     //= 3'b001;
       CSR_RS :  CSR_DATA_I <=  rs1_data_i | read_data_o;       //= 3'b010;
@@ -64,7 +65,7 @@ module csr_controller(
     endcase
   end
 
-  //DEMUX
+  //CSR ENABLE SINGALS LOGIC (DEMUX)
   always_comb begin
      MIE_WE      <= 1'b0;
      MTVEC_WE    <= 1'b0;
@@ -87,9 +88,9 @@ module csr_controller(
   register32 MEPC_REG       (.clk_i(clk_i), .rst_i(rst_i), .en_i(MEPC_WE || trap_i)     ,  .data_i(MEPC_DATA_I)     ,  .data_o(MEPC_DATA_O)     );
   register32 MCAUSE_REG     (.clk_i(clk_i), .rst_i(rst_i), .en_i(MCAUSE_WE || trap_i)   ,  .data_i(MCAUSE_DATA_I)   ,  .data_o(MCAUSE_DATA_O)   );
 
-  
+  //READ CSR DATA
   always_comb begin
-    read_data_o <=  32'b0; 
+    read_data_o   <=  32'b0; 
     case(addr_i)
       MIE_ADDR     :  read_data_o <=  MIE_DATA_O;            //= 12'h304;
       MTVEC_ADDR   :  read_data_o <=  MTVEC_DATA_O;          //= 12'h305;

@@ -28,34 +28,37 @@ module interrupt_controller (
 
   assign exc_set_OR_exc_h_Q   = (exc_h_set) | (exc_h_Q);
   assign irq_req_i_AND_mie_i  = (irq_req_i & mie_i);
-
+  //Exception logic
   assign exc_h_reset  = mret_i;
   assign exc_h_set    = exception_i;
   assign exc_h_D      = ~(exc_h_reset) & (exc_set_OR_exc_h_Q);
-
+  //Interruption logic
   assign irq_h_reset  = (exc_h_reset & (~exc_set_OR_exc_h_Q));
   assign irq_h_set    = irq_o;
   assign irq_h_D      = ~(irq_h_reset) & (irq_h_Q | irq_h_set);
   
   assign exc_set_NOR_irq_Q =  ~(irq_h_Q | exc_set_OR_exc_h_Q);
-
+  //Output signals
   assign irq_o          = (irq_req_i_AND_mie_i) & (exc_set_NOR_irq_Q);
   assign irq_cause_o    = 32'h1000_0010; 
   assign irq_ret_o      =  irq_h_reset;
   
   // assign  irq_reg_data_i =  !mret_and_not_exc_or_excreg &&  ;
 
-  
+  // exc_h register
   always_ff @ (posedge clk_i) begin
-    if(rst_i) begin
+    if(rst_i)
       exc_h_Q <=  1'b0;
-      irq_h_Q <=  1'b0;    
-    end else begin
+    else
       exc_h_Q <=  exc_h_D;
-      irq_h_Q <=  irq_h_D;
-    end
   end
-
+  // irq_h register
+  always_ff @ (posedge clk_i) begin
+    if(rst_i)
+      irq_h_Q <=  1'b0;    
+    else
+      irq_h_Q <=  irq_h_D;
+  end
   // logic [31:0]  exc_reg_data_i;
   // logic [31:0]  exc_reg_data_o;
   // logic [31:0]  irq_reg_data_i;
