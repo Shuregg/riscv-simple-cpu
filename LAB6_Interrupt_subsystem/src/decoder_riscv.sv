@@ -36,9 +36,14 @@ module decoder_riscv (
     gpr_we_o    <= 1'b0;
     a_sel_o     <= 2'b0;
     b_sel_o     <= 3'b0;
-    wb_sel_o    <= 2'b0;
+    wb_sel_o    <= 2'b00;
     mret_o      <= 1'b0;
     branch_o    <= 1'b0;
+    csr_we_o    <= 1'b0;
+    mem_req_o   <= 1'b0;
+    mem_size_o  <= 3'b111;      //a non-existent code
+    csr_op_o    <= 3'b000;      //a non-existent operation
+    alu_op_o    <= 5'b11111;    //a non-existent operation
     if(opcode[1:0] != 2'b11)
       illegal_instr_o <= 1'b1;
     else begin
@@ -403,12 +408,20 @@ module decoder_riscv (
           wb_sel_o  <= WB_CSR_DATA;
           case(funct3)
             3'b000: begin   //mret (machine return)
-              illegal_instr_o <= 1'b1;
+              illegal_instr_o <= 1'b0;
               gpr_we_o        <= 1'b0; //?
               csr_we_o        <= 1'b0; //?
               case(funct7)
-                7'h00:  illegal_instr_o <= 1'b1;//environment call
-                7'h01:  illegal_instr_o <= 1'b1;//environment break
+                7'h00: begin  
+                  illegal_instr_o <= 1'b1;  //environment call (ecall)
+                  gpr_we_o        <= 1'b0;
+                  csr_we_o        <= 1'b0;
+                end
+                7'h01: begin  
+                  illegal_instr_o <= 1'b1;//environment break (ebreak)
+                  gpr_we_o        <= 1'b0;
+                  csr_we_o        <= 1'b0;
+                end
                 7'h18: begin
                   mret_o          <= 1'b1;
                   illegal_instr_o <= 1'b0;
@@ -433,7 +446,7 @@ module decoder_riscv (
             default: begin
               gpr_we_o        <= 1'b0;
               mem_req_o       <= 1'b0;
-              illegal_instr_o <= 1'b1;
+              illegal_instr_o <= 1'b1;              //!!!
               csr_we_o        <= 1'b0;
               jal_o           <= 1'b0;
               jalr_o          <= 1'b0;
@@ -450,6 +463,7 @@ module decoder_riscv (
           jal_o           <= 1'b0;
           jalr_o          <= 1'b0;
           branch_o        <= 1'b0;  
+          wb_sel_o        <= 2'b0;    //???
         end
       endcase //end of main case (opcode[6:2])
     end

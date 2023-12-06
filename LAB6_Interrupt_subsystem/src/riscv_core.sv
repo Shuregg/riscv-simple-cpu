@@ -79,9 +79,6 @@ module riscv_core (
   //////////////////////////////
 //  logic [31:0]  
 
-
-
-    
 //IRQ CONTROLLER WIRES
   logic         IRQ_CONTR_IRQ_RET_OUT;
   logic [31:0]  IRQ_CONTR_IRQ_CAUSE_OUT;
@@ -117,14 +114,18 @@ module riscv_core (
 
   //wb_data assigning
   always_comb begin
+    wb_data <= 32'b0; //???
     case(MDEC_WB_SEL)
       WB_EX_RESULT: wb_data <= ALU_RES_OUT;
       WB_LSU_DATA : wb_data <= mem_rd_i;
       WB_CSR_DATA : wb_data <= CSR_CONTR_READ_DATA_OUT;
+//      default:      wb_data <= wb_data; //???
     endcase
   end
 //ASSIGNING (ALU)
   always_comb begin
+    ALU_A_IN    <=  2'b11;          //non-existent code
+    ALU_B_IN    <=  3'b111;         //non-existent code
     case(MDEC_A_SEL)  //choosing operand A (mux)
       OP_A_RS1:       ALU_A_IN <= RF_RD1_OUT;
       OP_A_CURR_PC:   ALU_A_IN <= PC_OUT;
@@ -151,12 +152,15 @@ module riscv_core (
 
   assign INCR_PC_IN         = PC_OUT + JAL_OR_BAF_MUX_OUT;              //next PC value if MDEC_JALR == 0
   assign RD1_PLUS_imm_I = RF_RD1_OUT + imm_I;
+  
   assign JALR_PC_IN = {RD1_PLUS_imm_I[31:1], 1'b0};                     //next PC value if MDEC_JALR == 1
   
-  
-  assign MTVEC_PC_IN  = TRAP ? CSR_CONTR_MTVEC_OUT : JALR_PC_IN;
-  assign PC_IN   = MDEC_MRET ? CSR_CONTR_MEPC_OUT : MTVEC_PC_IN;
-  // assign PC_IN              = MDEC_JALR ? JALR_PC_IN : INCR_PC_IN;      //next PC value
+  // assign JALR_MUX       = MDEC_JALR ? JALR_PC_IN : INCR_PC_IN;      
+  // assign MTVEC_PC_IN    = TRAP ? CSR_CONTR_MTVEC_OUT : JALR_MUX;
+  // assign PC_IN          = MDEC_MRET ? CSR_CONTR_MEPC_OUT : MTVEC_PC_IN; //next PC value
+
+  assign PC_IN = MDEC_MRET ? (CSR_CONTR_MEPC_OUT) : (TRAP ? (CSR_CONTR_MTVEC_OUT)  : (MDEC_JALR ? (JALR_PC_IN) : (INCR_PC_IN)));
+
 
 //ASSIGNING (RISCV CORE)
   assign instr_addr_o = PC_OUT; 
@@ -174,7 +178,7 @@ module riscv_core (
   assign CSR_CONTR_MCAUSE_IN = MDEC_ILLEGAL_INSTR ? ILL_INSTR_CAUSE_CODE : IRQ_CONTR_IRQ_CAUSE_OUT;
 
 //ASSIGNING (IRQ CONTROLLER WIRES)
-  assign irq_ret_o = IRQ_CONTR_IRQ_RET_OUT;
+//  assign irq_ret_o = IRQ_CONTR_IRQ_RET_OUT;
 
 /*===========================INSTANCES===========================*/ 
 //MAIN DECODER INSTANCE
@@ -241,7 +245,7 @@ module riscv_core (
     .mie_i(CSR_CONTR_MIE_OUT[0]),
     .mret_i(MDEC_MRET),
 
-    .irq_ret_o(IRQ_CONTR_IRQ_RET_OUT),
+    .irq_ret_o(irq_ret_o),
     .irq_cause_o(IRQ_CONTR_IRQ_CAUSE_OUT),  //[31:0]
     .irq_o(IRQ_CONTR_IRQ_OUT)
   );

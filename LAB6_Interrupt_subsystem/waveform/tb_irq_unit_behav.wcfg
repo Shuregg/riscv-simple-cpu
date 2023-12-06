@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_irq_unit_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_opcodes_pkg" />
+            <top_module name="csr_pkg" />
+            <top_module name="glbl" />
+            <top_module name="riscv_pkg" />
+            <top_module name="tb_irq_unit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1103470fs"></ZoomStartTime>
+      <ZoomEndTime time="1356271fs"></ZoomEndTime>
+      <Cursor1Time time="1605470fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="199"></NameColumnWidth>
+      <ValueColumnWidth column_width="73"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="84" />
+   <wvobject fp_name="/tb_irq_unit/unit/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/rst_i" type="logic">
+      <obj_property name="ElementShortName">rst_i</obj_property>
+      <obj_property name="ObjectShortName">rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/instr_addr" type="array">
+      <obj_property name="ElementShortName">instr_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr_addr[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/mem_req" type="logic">
+      <obj_property name="ElementShortName">mem_req</obj_property>
+      <obj_property name="ObjectShortName">mem_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/mem_we" type="logic">
+      <obj_property name="ElementShortName">mem_we</obj_property>
+      <obj_property name="ObjectShortName">mem_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/mem_wd" type="array">
+      <obj_property name="ElementShortName">mem_wd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_wd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/mem_addr" type="array">
+      <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/rd" type="array">
+      <obj_property name="ElementShortName">rd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/stall" type="logic">
+      <obj_property name="ElementShortName">stall</obj_property>
+      <obj_property name="ObjectShortName">stall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/mem_size" type="array">
+      <obj_property name="ElementShortName">mem_size[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_size[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/irq_req" type="logic">
+      <obj_property name="ElementShortName">irq_req</obj_property>
+      <obj_property name="ObjectShortName">irq_req</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/irq_ret" type="logic">
+      <obj_property name="ElementShortName">irq_ret</obj_property>
+      <obj_property name="ObjectShortName">irq_ret</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/data_mem_rd_o" type="array">
+      <obj_property name="ElementShortName">data_mem_rd_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_mem_rd_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/data_mem_ready_o" type="logic">
+      <obj_property name="ElementShortName">data_mem_ready_o</obj_property>
+      <obj_property name="ObjectShortName">data_mem_ready_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_req_o" type="logic">
+      <obj_property name="ElementShortName">lsu_mem_req_o</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_req_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_wd_o" type="array">
+      <obj_property name="ElementShortName">lsu_mem_wd_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_wd_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_addr_o" type="array">
+      <obj_property name="ElementShortName">lsu_mem_addr_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_addr_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_we_o" type="logic">
+      <obj_property name="ElementShortName">lsu_mem_we_o</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_we_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_be_o" type="array">
+      <obj_property name="ElementShortName">lsu_mem_be_o[3:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_be_o[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/lsu_mem_rd_i" type="array">
+      <obj_property name="ElementShortName">lsu_mem_rd_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lsu_mem_rd_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exception_i" type="logic">
+      <obj_property name="ElementShortName">exception_i</obj_property>
+      <obj_property name="ObjectShortName">exception_i</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_req_i" type="logic">
+      <obj_property name="ElementShortName">irq_req_i</obj_property>
+      <obj_property name="ObjectShortName">irq_req_i</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/mie_i" type="logic">
+      <obj_property name="ElementShortName">mie_i</obj_property>
+      <obj_property name="ObjectShortName">mie_i</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/mret_i" type="logic">
+      <obj_property name="ElementShortName">mret_i</obj_property>
+      <obj_property name="ObjectShortName">mret_i</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_ret_o" type="logic">
+      <obj_property name="ElementShortName">irq_ret_o</obj_property>
+      <obj_property name="ObjectShortName">irq_ret_o</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_cause_o" type="array">
+      <obj_property name="ElementShortName">irq_cause_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">irq_cause_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_o" type="logic">
+      <obj_property name="ElementShortName">irq_o</obj_property>
+      <obj_property name="ObjectShortName">irq_o</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_h_reset" type="logic">
+      <obj_property name="ElementShortName">exc_h_reset</obj_property>
+      <obj_property name="ObjectShortName">exc_h_reset</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_h_set" type="logic">
+      <obj_property name="ElementShortName">exc_h_set</obj_property>
+      <obj_property name="ObjectShortName">exc_h_set</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_h_D" type="logic">
+      <obj_property name="ElementShortName">exc_h_D</obj_property>
+      <obj_property name="ObjectShortName">exc_h_D</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_h_Q" type="logic">
+      <obj_property name="ElementShortName">exc_h_Q</obj_property>
+      <obj_property name="ObjectShortName">exc_h_Q</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_h_reset" type="logic">
+      <obj_property name="ElementShortName">irq_h_reset</obj_property>
+      <obj_property name="ObjectShortName">irq_h_reset</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_h_set" type="logic">
+      <obj_property name="ElementShortName">irq_h_set</obj_property>
+      <obj_property name="ObjectShortName">irq_h_set</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_h_D" type="logic">
+      <obj_property name="ElementShortName">irq_h_D</obj_property>
+      <obj_property name="ObjectShortName">irq_h_D</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_h_Q" type="logic">
+      <obj_property name="ElementShortName">irq_h_Q</obj_property>
+      <obj_property name="ObjectShortName">irq_h_Q</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_set_OR_exc_h_Q" type="logic">
+      <obj_property name="ElementShortName">exc_set_OR_exc_h_Q</obj_property>
+      <obj_property name="ObjectShortName">exc_set_OR_exc_h_Q</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/irq_req_i_AND_mie_i" type="logic">
+      <obj_property name="ElementShortName">irq_req_i_AND_mie_i</obj_property>
+      <obj_property name="ObjectShortName">irq_req_i_AND_mie_i</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/irq_controller_inst/exc_set_NOR_irq_Q" type="logic">
+      <obj_property name="ElementShortName">exc_set_NOR_irq_Q</obj_property>
+      <obj_property name="ObjectShortName">exc_set_NOR_irq_Q</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/mcause_i" type="array">
+      <obj_property name="ElementShortName">mcause_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mcause_i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/imm_data_i" type="array">
+      <obj_property name="ElementShortName">imm_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_data_i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/write_enable_i" type="logic">
+      <obj_property name="ElementShortName">write_enable_i</obj_property>
+      <obj_property name="ObjectShortName">write_enable_i</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/mie_o" type="array">
+      <obj_property name="ElementShortName">mie_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mie_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MIE_WE" type="logic">
+      <obj_property name="ElementShortName">MIE_WE</obj_property>
+      <obj_property name="ObjectShortName">MIE_WE</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MTVEC_WE" type="logic">
+      <obj_property name="ElementShortName">MTVEC_WE</obj_property>
+      <obj_property name="ObjectShortName">MTVEC_WE</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MSCRATCH_WE" type="logic">
+      <obj_property name="ElementShortName">MSCRATCH_WE</obj_property>
+      <obj_property name="ObjectShortName">MSCRATCH_WE</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MEPC_WE" type="logic">
+      <obj_property name="ElementShortName">MEPC_WE</obj_property>
+      <obj_property name="ObjectShortName">MEPC_WE</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MCAUSE_WE" type="logic">
+      <obj_property name="ElementShortName">MCAUSE_WE</obj_property>
+      <obj_property name="ObjectShortName">MCAUSE_WE</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/rs1_data_i" type="array">
+      <obj_property name="ElementShortName">rs1_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1_data_i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/opcode_i" type="array">
+      <obj_property name="ElementShortName">opcode_i[2:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode_i[2:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/read_data_o" type="array">
+      <obj_property name="ElementShortName">read_data_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/addr_i" type="array">
+      <obj_property name="ElementShortName">addr_i[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_i[11:0]</obj_property>
+      <obj_property name="CustomSignalColor">#0000FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/pc_i" type="array">
+      <obj_property name="ElementShortName">pc_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/CSR_DATA_I" type="array">
+      <obj_property name="ElementShortName">CSR_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CSR_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/trap_i" type="logic">
+      <obj_property name="ElementShortName">trap_i</obj_property>
+      <obj_property name="ObjectShortName">trap_i</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MIE_DATA_I" type="array">
+      <obj_property name="ElementShortName">MIE_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MIE_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MTVEC_DATA_I" type="array">
+      <obj_property name="ElementShortName">MTVEC_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MTVEC_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MSCRATCH_DATA_I" type="array">
+      <obj_property name="ElementShortName">MSCRATCH_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MSCRATCH_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MEPC_DATA_I" type="array">
+      <obj_property name="ElementShortName">MEPC_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEPC_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MCAUSE_DATA_I" type="array">
+      <obj_property name="ElementShortName">MCAUSE_DATA_I[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MCAUSE_DATA_I[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MIE_DATA_O" type="array">
+      <obj_property name="ElementShortName">MIE_DATA_O[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MIE_DATA_O[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MTVEC_DATA_O" type="array">
+      <obj_property name="ElementShortName">MTVEC_DATA_O[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MTVEC_DATA_O[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MSCRATCH_DATA_O" type="array">
+      <obj_property name="ElementShortName">MSCRATCH_DATA_O[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MSCRATCH_DATA_O[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MEPC_DATA_O" type="array">
+      <obj_property name="ElementShortName">MEPC_DATA_O[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MEPC_DATA_O[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/MCAUSE_DATA_O" type="array">
+      <obj_property name="ElementShortName">MCAUSE_DATA_O[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MCAUSE_DATA_O[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/MDEC_JALR" type="logic">
+      <obj_property name="ElementShortName">MDEC_JALR</obj_property>
+      <obj_property name="ObjectShortName">MDEC_JALR</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/TRAP" type="logic">
+      <obj_property name="ElementShortName">TRAP</obj_property>
+      <obj_property name="ObjectShortName">TRAP</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/MDEC_MRET" type="logic">
+      <obj_property name="ElementShortName">MDEC_MRET</obj_property>
+      <obj_property name="ObjectShortName">MDEC_MRET</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/JALR_PC_IN" type="array">
+      <obj_property name="ElementShortName">JALR_PC_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">JALR_PC_IN[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/mtvec_o" type="array">
+      <obj_property name="ElementShortName">mtvec_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mtvec_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/csr_controller_inst/mepc_o" type="array">
+      <obj_property name="ElementShortName">mepc_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mepc_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/PC_OUT" type="array">
+      <obj_property name="ElementShortName">PC_OUT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_OUT[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/PC_IN" type="array">
+      <obj_property name="ElementShortName">PC_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC_IN[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/INCR_PC_IN" type="array">
+      <obj_property name="ElementShortName">INCR_PC_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INCR_PC_IN[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/write_enable_i" type="logic">
+      <obj_property name="ElementShortName">write_enable_i</obj_property>
+      <obj_property name="ObjectShortName">write_enable_i</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/write_addr_i" type="array">
+      <obj_property name="ElementShortName">write_addr_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">write_addr_i[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/read_addr1_i" type="array">
+      <obj_property name="ElementShortName">read_addr1_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr1_i[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/read_addr2_i" type="array">
+      <obj_property name="ElementShortName">read_addr2_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr2_i[4:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/write_data_i" type="array">
+      <obj_property name="ElementShortName">write_data_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data_i[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/read_data1_o" type="array">
+      <obj_property name="ElementShortName">read_data1_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data1_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/read_data2_o" type="array">
+      <obj_property name="ElementShortName">read_data2_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data2_o[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/main_decoder_inst/wb_sel_o" type="array">
+      <obj_property name="ElementShortName">wb_sel_o[1:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_sel_o[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_irq_unit/unit/core/register_file_inst/rf_mem" type="array">
+      <obj_property name="ElementShortName">rf_mem[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_mem[0:31][31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#808000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

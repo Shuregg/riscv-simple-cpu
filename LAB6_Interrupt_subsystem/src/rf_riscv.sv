@@ -14,7 +14,7 @@ module rf_riscv(
   logic [31:0] rf_mem [0:31];
   
 //READ
-  always@(*) begin
+  always_comb begin
     case(read_addr1_i) //read data1
       5'b0: read_data1_o <= 32'b0;
       default: read_data1_o <= rf_mem[read_addr1_i];
@@ -25,11 +25,13 @@ module rf_riscv(
     endcase
   end 
 //WRITE
-  always@(posedge clk_i) begin
+  always_ff @(posedge clk_i) begin
     if(write_enable_i)
       case(write_addr_i)
-        5'b0: rf_mem[5'b0] <= 32'b0;
-        default: rf_mem[write_addr_i] <= write_data_i;
+        5'b0:       rf_mem[write_addr_i] <= 32'b0;
+        default:    rf_mem[write_addr_i] <= write_data_i;
       endcase
+//    else
+//      rf_mem[write_addr_i] <= rf_mem[write_addr_i];
   end
 endmodule

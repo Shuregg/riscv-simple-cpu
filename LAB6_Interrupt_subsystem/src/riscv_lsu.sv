@@ -21,11 +21,7 @@ module riscv_lsu(
   input  logic        mem_ready_i
   );
   
-//  import riscv_pkg::LDST_B;
-//  import riscv_pkg::LDST_H;
-//  import riscv_pkg::LDST_W;
-//  import riscv_pkg::LDST_BU;
-//  import riscv_pkg::LDST_HU;
+
   import riscv_pkg::*;
   
   logic stall_reg;
@@ -33,10 +29,12 @@ module riscv_lsu(
   assign mem_req_o    = core_req_i;
   assign mem_we_o     = core_we_i;
   assign mem_addr_o   = core_addr_i;
-//  assign core_stall_o = ( !(stall_reg && mem_ready_i) && core_req_i); //???
+  assign core_stall_o = ( !(stall_reg && mem_ready_i) && core_req_i);
 
   //STORE BYTE/HALF/WORD
   always_comb begin
+    mem_be_o  <=  4'b1111;
+    mem_wd_o  <=  32'b0;
     if(core_req_i && core_we_i) begin
       case(core_size_i)
         LDST_B: begin   
@@ -52,28 +50,32 @@ module riscv_lsu(
           mem_wd_o  <=  core_wd_i;
         end
       endcase
-    end else begin
-    
-    end    
+    end 
+//    else begin
+//        mem_be_o <= 4'b0000;
+//        mem_wd_o <= mem_wd_o;
+//    end    
   end
 
   //LOAD BYTE/HALF/WORD/Unsigned BYTE/Unsigned HALF
   always_comb begin
+    core_rd_o <= 32'b0; 
     if(core_addr_i && !core_we_i) begin
       case(core_size_i)
+        //==============================LDST_B================================
         LDST_B  : begin
           case(core_addr_i[1:0])
             2'b00:  core_rd_o <= { {24{mem_rd_i[7]}} , mem_rd_i[ 7: 0]};
             2'b01:  core_rd_o <= { {24{mem_rd_i[15]}}, mem_rd_i[15: 8]};
             2'b10:  core_rd_o <= { {24{mem_rd_i[23]}}, mem_rd_i[23:16]};
             2'b11:  core_rd_o <= { {24{mem_rd_i[31]}}, mem_rd_i[31:24]};
-            default: begin end
           endcase
         end 
+        //==============================LDST_H================================
         LDST_H  : core_rd_o <= core_addr_i[1] ? { {16{mem_rd_i[31]}}, mem_rd_i[31:16]} : { {16{mem_rd_i[15]}}, mem_rd_i[15:0]};
-        
+        //==============================LDST_W================================
         LDST_W  : core_rd_o <= mem_rd_i;
-
+        //==============================LDST_BU================================
         LDST_BU : begin
           case(core_addr_i[1:0])
             2'b00:  core_rd_o <= { 24'b0, mem_rd_i[ 7: 0]};
@@ -83,19 +85,17 @@ module riscv_lsu(
             default: begin end
           endcase
         end
-        
+        //==============================LDST_HU================================
         LDST_HU : core_rd_o <= core_addr_i[1] ? { 16'b0, mem_rd_i[31:16]} : { 16'b0, mem_rd_i[15:0]};
       endcase
     end
   end
-
+  //Stall register
   always_ff @(posedge clk_i or posedge rst_i) begin
     if(rst_i) begin
       stall_reg     <= 1'b0;
-      core_stall_o  <= 1'b0;
     end else begin
-      stall_reg     <= ( !(stall_reg && mem_ready_i) && core_req_i);
-      core_stall_o  <= ( !(stall_reg && mem_ready_i) && core_req_i);
+      stall_reg     <= core_stall_o;
     end
   end
 
