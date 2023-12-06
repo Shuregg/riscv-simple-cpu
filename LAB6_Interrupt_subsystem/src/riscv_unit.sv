@@ -66,7 +66,7 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sy
 //===================================RISC-V CORE===================================
   riscv_core core
   (
-    .clk_i(clk_i),
+    .clk_i(sysclk),               //clk_i -> sysclk
     .rst_i(rst),                  //rst_i replaced by rst
     .stall_i(stall),         
     .instr_i(instr),
@@ -86,7 +86,7 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sy
 //===================================LOAD STORE UNIT (LSU)===================================
   riscv_lsu LSU_inst
   (  //Core interface
-    .clk_i(clk_i),
+    .clk_i(sysclk),               //clk_i -> sysclk
     .rst_i(rst),                  //rst_i replaced by rst
     .core_req_i(mem_req),
     .core_we_i(mem_we),
@@ -107,7 +107,7 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sy
 //===================================EXTERNAL MEMORY (New data memory)===================================
   ext_mem ext_mem_inst
   (
-    .clk_i(clk_i),
+    .clk_i(sysclk),                 //clk_i -> sysclk
     .mem_req_i(lsu_mem_req_o),
     .write_enable_i(lsu_mem_we_o),
     .byte_enable_i(lsu_mem_be_o),           
