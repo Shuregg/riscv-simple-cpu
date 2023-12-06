@@ -62,6 +62,8 @@ module led_sb_ctrl(
 
   assign rd_reg_D       = is_val_addr ? ({16'd0, led_val}) : ({32'd0, led_mode});
   assign rd_reg_en      = (read_req) && ((is_val_addr) || (is_mode_addr));
+
+  assign read_data_o    = rd_reg_Q;
 //===============Value register implementation===============
   always_ff @(posedge clk_i) begin
     if(rst)             led_val <= 16'b0;
