@@ -1,9 +1,9 @@
 module led_sb_ctrl(
 /*
-    Часть интерфейса модуля, отвечающая за подключение к системной шине
+    SYSTEM BUS INTERFACE SIDE
 */
   input  logic        clk_i,
-  input  logic        rst_i
+  input  logic        rst_i,
   input  logic        req_i,
   input  logic        write_enable_i,
   input  logic [31:0] addr_i,
@@ -11,7 +11,7 @@ module led_sb_ctrl(
   output logic [31:0] read_data_o,
 
 /*
-    Часть интерфейса модуля, отвечающая за подключение к периферии
+    PERIPHERAL CONNECTION INTERFACE SIDE
 */
   output logic [15:0]  led_o
 );
@@ -46,9 +46,9 @@ module led_sb_ctrl(
   assign write_req = req_i && write_enable_i;
   assign read_req  = req_i && !write_enable_i;
 
-  assign is_val_addr    = (addr_i == 32'h02000000)  ? 1'b1 : 1'b0;
-  assign is_mode_addr   = (addr_i == 32'h02000004)  ? 1'b1 : 1'b0;
-  assign is_rst_addr    = (addr_i == 32'h02000024)  ? 1'b1 : 1'b0;
+  assign is_val_addr    = (addr_i == 32'h00000000)  ? 1'b1 : 1'b0;
+  assign is_mode_addr   = (addr_i == 32'h00000004)  ? 1'b1 : 1'b0;
+  assign is_rst_addr    = (addr_i == 32'h00000024)  ? 1'b1 : 1'b0;
 
   assign val_valid      = (write_data_i <= 32'hffff)    ? 1'b1 : 1'b0;
   assign mode_valid     = (write_data_i < 32'd2)        ? 1'b1 : 1'b0;
@@ -83,7 +83,7 @@ module led_sb_ctrl(
   end
 //===============LED OUT LOGIC==============================
   always_comb begin
-    case(cntr < 'd10_000_000)
+    case(cntr < frequency)
       1'b0: led_o <= 16'd0;
       1'b1: led_o <= led_val;
     endcase

@@ -2,7 +2,7 @@ module riscv_unit(
   //Main singals
     input logic          clk_i
   //  ,input logic          rst_i
-   ,input logic          resent_i      //now it's reset with active '0'
+   ,input logic          resetn_i      //now it's reset with active '0'
 
   //Peripheral Input/Output signlas
   ,input  logic [15:0]  sw_i          //switches
@@ -20,7 +20,7 @@ module riscv_unit(
 
   ,output logic [ 3:0]  vga_r_o       //VGA Red channel
   ,output logic [ 3:0]  vga_g_o       //VGA Green channel
-  ,output logic [ 3:0]  vga_b_o       //VGA Red Blue channel
+  ,output logic [ 3:0]  vga_b_o       //VGA Blue channel
   ,output logic         vga_hs_o      //VGA Horizontal syncrhonization
   ,output logic         vga_vs_o      //VGA Vertical syncrhonization
 );
@@ -49,14 +49,56 @@ module riscv_unit(
   logic         lsu_mem_we_o;
   logic [3:0]   lsu_mem_be_o;
   logic [31:0]  lsu_mem_rd_i; 
+
+  logic [31:0]  lsu_data_i;
 //Peripheral wires
   logic         sysclk;             //New clock signal 10 MHz
   logic         rst;                //Reset for new Clock (Active '1')
+//One Hot Encoder 
+  logic [254:0] one_hot_encoder_o;
+  logic [31:0]  peripheral_addr;
+//Peripheral devices require signals;
+  logic         data_mem_sb_req;
+
+  logic         sw_sb_ctrl_req;
+  logic         sw_irq;
+  logic [31:0]  sw_data_o;
 
 
+  logic         led_sb_ctrl_req;
+  logic [31:0]  led_data_o;
+
+  logic         ps2_sb_ctrl_req;
+  logic         hex_sb_ctrl_req;
+  logic         uart_rx_sb_ctrl_req;
+  logic         uart_tx_sb_ctrl_req;
+  logic         vga_sb_ctrl_req;
 //===================================Frequency(Clock) Divider===================================
 sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sys_clk_o(sysclk), .sys_reset_o(rst));
 
+//===================================One Hot Encoder and LSU signals===================================    
+  assign one_hot_encoder_o    = 255'd1 << lsu_mem_addr_o[31:24];
+  assign peripheral_addr      = {8'd0, lsu_mem_addr_o[23:0]};
+  assign data_mem_sb_req      = lsu_mem_req_o && one_hot_encoder_o[0];
+  assign sw_sb_ctrl_req       = lsu_mem_req_o && one_hot_encoder_o[1];
+  assign led_sb_ctrl_req      = lsu_mem_req_o && one_hot_encoder_o[2];
+  assign ps2_sb_ctrl_req      = lsu_mem_req_o && one_hot_encoder_o[3];
+  assign hex_sb_ctrl_req      = lsu_mem_req_o && one_hot_encoder_o[4];
+  assign uart_rx_sb_ctrl_req  = lsu_mem_req_o && one_hot_encoder_o[5];
+  assign uart_tx_sb_ctrl_req  = lsu_mem_req_o && one_hot_encoder_o[6];
+  assign vga_sb_ctrl_req      = lsu_mem_req_o && one_hot_encoder_o[7];
+
+
+  assign irq_req              = sw_irq;
+
+  always_comb begin
+    lsu_data_i <= 8'b0;
+    case(lsu_mem_addr_o[31:24])
+      8'd0:  lsu_data_i = data_mem_rd_o;
+      8'd1:  lsu_data_i = sw_data_o;
+      8'd2:  lsu_data_i = led_data_o;
+    endcase
+  end
 //===================================INSTRUCTION MEMORY===================================
   instr_mem instr_mem_inst
   (
@@ -97,44 +139,50 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sy
     .core_stall_o(stall),
   // Data Memory interface
     .mem_req_o(lsu_mem_req_o),
-    .mem_we_o(lsu_mem_we_o),
+    .mem_we_o(lsu_mem_we_o),        //lsu_dev_we_o
     .mem_be_o(lsu_mem_be_o),
-    .mem_addr_o(lsu_mem_addr_o),
+    .mem_addr_o(lsu_mem_addr_o),    //TODO
     .mem_wd_o(lsu_mem_wd_o),
-    .mem_rd_i(data_mem_rd_o),
-    .mem_ready_i(data_mem_ready_o)
+    .mem_rd_i(lsu_data_i),          //TODO
+    .mem_ready_i(data_mem_ready_o)  //
   );
 //===================================EXTERNAL MEMORY (New data memory)===================================
   ext_mem ext_mem_inst
   (
-    .clk_i(sysclk),                 //clk_i -> sysclk
-    .mem_req_i(lsu_mem_req_o),
-    .write_enable_i(lsu_mem_we_o),
-    .byte_enable_i(lsu_mem_be_o),           
-    .addr_i(lsu_mem_addr_o),
+    .clk_i(sysclk),                     //clk_i -> sysclk
+    .mem_req_i(data_mem_sb_req),        //lsu_mem_req_o -> data_mem_sb_req
+    .write_enable_i(lsu_mem_we_o),    
+    .byte_enable_i(lsu_mem_be_o),               
+    .addr_i(peripheral_addr),           //lsu_mem_addr_o -> peripheral_addr
     .write_data_i(lsu_mem_wd_o),
     
     .read_data_o(data_mem_rd_o),
     .ready_o(data_mem_ready_o)
   );
-
-//===================================OLD STALL & DATA MEMORY LOGIC===================================
-  //assign nstall_and_mem_req = !stall && mem_req;
-  //STALL logic
-  //  always_ff @(posedge clk_i or posedge rst_i) begin
-  //    if(rst_i)
-  //      stall <= 1'b0;
-  //    else
-  //      stall <= nstall_and_mem_req;
-  //  end
-  //OLD DATA MEMORY  
-  //  data_mem data_mem_inst
-  //  (
-  //    .clk_i(clk_i),
-  //    .mem_req_i(mem_req),
-  //    .write_enable_i(mem_we),
-  //    .addr_i(mem_addr),
-  //    .write_data_i(mem_wd),
-  //    .read_data_o(rd)
-  //  );
+//===================================SWITCH CONTROLLER===================================
+  sw_sb_ctrl switch_controller (    
+    .clk_i(sysclk),
+    .rst_i(rst),
+    .req_i(sw_sb_ctrl_req),
+    .write_enable_i(lsu_mem_we_o),
+    .addr_i(peripheral_addr),
+    .write_data_i(),                 //NO Connection
+    .read_data_o(sw_data_o),
+  //core interruption IF
+    .interrupt_request_o(sw_irq),
+    .interrupt_return_i(irq_ret),
+  //peripheral connection
+    .sw_i(sw_i)
+  );
+  //===================================LED CONTROLLER===================================
+  led_sb_ctrl led_controller (
+    .clk_i(sysclk),
+    .rst_i(rst),
+    .req_i(led_sb_ctrl_req),
+    .write_enable_i(lsu_mem_we_o),
+    .addr_i(peripheral_addr),
+    .write_data_i(sw_data_o),
+    .read_data_o(led_data_o),
+    .led_o(led_o)
+  );
 endmodule
