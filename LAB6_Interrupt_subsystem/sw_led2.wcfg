@@ -15,12 +15,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="2150001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="178800001fs"></ZoomEndTime>
+      <Cursor1Time time="19995000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="177"></NameColumnWidth>
-      <ValueColumnWidth column_width="216"></ValueColumnWidth>
+      <ValueColumnWidth column_width="211"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="7" />
    <wvobject fp_name="group217" type="group">
@@ -322,7 +322,6 @@
    <wvobject fp_name="group216" type="group">
       <obj_property name="label">SW CTRL</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="divider" fp_name="divider169">
          <obj_property name="label">SW CTRL</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -528,28 +527,6 @@
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
          <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
          <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/cntr_rst" type="logic">
-         <obj_property name="ElementShortName">cntr_rst</obj_property>
-         <obj_property name="ObjectShortName">cntr_rst</obj_property>
-         <obj_property name="CustomSignalColor">#FFA500</obj_property>
-         <obj_property name="UseCustomSignalColor">true</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_Q" type="array">
-         <obj_property name="ElementShortName">rd_reg_Q[31:0]</obj_property>
-         <obj_property name="ObjectShortName">rd_reg_Q[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_en" type="logic">
-         <obj_property name="ElementShortName">rd_reg_en</obj_property>
-         <obj_property name="ObjectShortName">rd_reg_en</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_D" type="array">
-         <obj_property name="ElementShortName">rd_reg_D[31:0]</obj_property>
-         <obj_property name="ObjectShortName">rd_reg_D[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/frequency" type="array">
-         <obj_property name="ElementShortName">frequency[31:0]</obj_property>
-         <obj_property name="ObjectShortName">frequency[31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group121" type="group">

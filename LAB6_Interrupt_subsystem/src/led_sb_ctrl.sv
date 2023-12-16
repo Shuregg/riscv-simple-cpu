@@ -43,7 +43,7 @@ module led_sb_ctrl(
   logic         rd_reg_en;                    // Read data register (Enable)
   logic [31:0]  rd_reg_D;                     // Read data register (Input data)
   
-  assign frequency = 32'd10_000_;
+  assign frequency = 32'd10_000_000;
   
   assign write_req = req_i && write_enable_i;
   assign read_req  = req_i && !write_enable_i;
@@ -52,9 +52,9 @@ module led_sb_ctrl(
   assign is_mode_addr   = (addr_i == 32'h4 );
   assign is_rst_addr    = (addr_i == 32'h24);
 
-  assign val_valid      = (write_data_i <= 32'hffff)      ? 1'b1 : 1'b0;
-  assign mode_valid     = (write_data_i < 32'd2)          ? 1'b1 : 1'b0;
-  assign rst_valid      = (write_data_i == 32'd1)         ? 1'b1 : 1'b0;
+  assign val_valid      = (write_data_i <= 32'hffff);
+  assign mode_valid     = (write_data_i < 32'd2);
+  assign rst_valid      = (write_data_i == 32'd1);
 
   assign rst            = (write_req && is_rst_addr && rst_valid  ) || (rst_i);
   assign val_en         = (write_req && is_val_addr  && val_valid );
@@ -89,13 +89,13 @@ module led_sb_ctrl(
   always_ff @(posedge clk_i) begin
     if(rst)             led_val <= 16'b0;
     else if(val_en)     led_val <= write_data_i[15:0];
-//    else                led_val <= led_val;
+    else                led_val <= led_val;
   end
 //===============Mode register implementation===============
   always_ff @(posedge clk_i) begin
     if(rst)             led_mode <= 1'b0;
     else if(mode_en)    led_mode <= write_data_i[0];
-//    else                led_mode <= led_mode;
+    else                led_mode <= led_mode;
   end
 //===============Clock counter==============================
   always_ff @(posedge clk_i) begin

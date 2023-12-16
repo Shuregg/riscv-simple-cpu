@@ -141,7 +141,7 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i('d10),.
     .core_wd_i(mem_wd),
     .core_rd_o(rd),
     .core_stall_o(stall),
-  // Data Memory interface
+  // Peripheral devices interface
     .mem_req_o(lsu_mem_req_o),
     .mem_we_o(lsu_mem_we_o),        //lsu_dev_we_o
     .mem_be_o(lsu_mem_be_o),
@@ -185,7 +185,7 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i('d10),.
     .req_i(led_sb_ctrl_req),
     .write_enable_i(lsu_mem_we_o),
     .addr_i(peripheral_addr),
-    .write_data_i(sw_data_o),
+    .write_data_i(lsu_mem_wd_o),          ///!!!
     .read_data_o(led_data_o),
     .led_o(led_o)
   );
