@@ -10,7 +10,7 @@ module riscv_unit(
   ,output logic [15:0]  led_o         //Light Emmiting Diodes (LEDs)
 
   ,input  logic         kclk_i        //Keyboard clock signal
-  ,input  logic         kdata         //Keyboard data singal
+  ,input  logic         kdata_i         //Keyboard data singal
 
   ,output logic [ 6:0]  hex_led_o     //7-segment indicator output
   ,output logic [ 7:0]  hex_sel_o     //Selector of indicators
@@ -55,7 +55,7 @@ module riscv_unit(
   logic         sysclk;             //New clock signal 10 MHz
   logic         rst;                //Reset for new Clock (Active '1')
 //One Hot Encoder 
-  logic [254:0] one_hot_encoder_o;
+  logic [255:0] one_hot_encoder_o;
   logic [31:0]  peripheral_addr;
 //Peripheral devices require signals;
   logic         data_mem_sb_req;
@@ -74,11 +74,12 @@ module riscv_unit(
   logic         uart_tx_sb_ctrl_req;
   logic         vga_sb_ctrl_req;
 //===================================Frequency(Clock) Divider===================================
-sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sys_clk_o(sysclk), .sys_reset_o(rst));
+sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i('d10),.sys_clk_o(sysclk), .sys_reset_o(rst));
 
 //===================================One Hot Encoder and LSU signals===================================    
-  assign one_hot_encoder_o    = 255'd1 << lsu_mem_addr_o[31:24];
+  assign one_hot_encoder_o    = 256'd1 << lsu_mem_addr_o[31:24];
   assign peripheral_addr      = {8'd0, lsu_mem_addr_o[23:0]};
+// Devices ebable signals  
   assign data_mem_sb_req      = lsu_mem_req_o && one_hot_encoder_o[0];
   assign sw_sb_ctrl_req       = lsu_mem_req_o && one_hot_encoder_o[1];
   assign led_sb_ctrl_req      = lsu_mem_req_o && one_hot_encoder_o[2];
@@ -92,11 +93,14 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i(10),.sy
   assign irq_req              = sw_irq;
 
   always_comb begin
-    lsu_data_i <= 8'b0;
+//    lsu_data_i = 8'b0;
     case(lsu_mem_addr_o[31:24])
-      8'd0:  lsu_data_i = data_mem_rd_o;
-      8'd1:  lsu_data_i = sw_data_o;
-      8'd2:  lsu_data_i = led_data_o;
+      8'd0:     lsu_data_i = data_mem_rd_o;
+      8'd1:     lsu_data_i = sw_data_o;
+      8'd2:     lsu_data_i = led_data_o;
+      
+      default:  lsu_data_i = 8'b0;
+      // 8'd255: // Max index
     endcase
   end
 //===================================INSTRUCTION MEMORY===================================

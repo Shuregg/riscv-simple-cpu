@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_riscv_unit_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="alu_opcodes_pkg" />
+            <top_module name="csr_pkg" />
+            <top_module name="glbl" />
+            <top_module name="riscv_pkg" />
+            <top_module name="tb_riscv_unit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2150001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="177"></NameColumnWidth>
+      <ValueColumnWidth column_width="216"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject fp_name="group217" type="group">
+      <obj_property name="label">RV UNIT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="divider" fp_name="divider168">
+         <obj_property name="label">UNIT</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#FFA500</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/ps2_clk" type="logic">
+         <obj_property name="ElementShortName">ps2_clk</obj_property>
+         <obj_property name="ObjectShortName">ps2_clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/ps2_dat" type="logic">
+         <obj_property name="ElementShortName">ps2_dat</obj_property>
+         <obj_property name="ObjectShortName">ps2_dat</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/resetn" type="logic">
+         <obj_property name="ElementShortName">resetn</obj_property>
+         <obj_property name="ObjectShortName">resetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/sw_i" type="array">
+         <obj_property name="ElementShortName">sw_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sw_i[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/led_o" type="array">
+         <obj_property name="ElementShortName">led_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">led_o[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/parity" type="logic">
+         <obj_property name="ElementShortName">parity</obj_property>
+         <obj_property name="ObjectShortName">parity</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/starter" type="logic">
+         <obj_property name="ElementShortName">starter</obj_property>
+         <obj_property name="ObjectShortName">starter</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/hex_led_o" type="array">
+         <obj_property name="ElementShortName">hex_led_o[6:0]</obj_property>
+         <obj_property name="ObjectShortName">hex_led_o[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/hex_sel_o" type="array">
+         <obj_property name="ElementShortName">hex_sel_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">hex_sel_o[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/rx_i" type="logic">
+         <obj_property name="ElementShortName">rx_i</obj_property>
+         <obj_property name="ObjectShortName">rx_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/tx_o" type="logic">
+         <obj_property name="ElementShortName">tx_o</obj_property>
+         <obj_property name="ObjectShortName">tx_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/cntr" type="array">
+         <obj_property name="ElementShortName">cntr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">cntr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/data" type="array">
+         <obj_property name="ElementShortName">data[11:0]</obj_property>
+         <obj_property name="ObjectShortName">data[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/uart_data" type="array">
+         <obj_property name="ElementShortName">uart_data[11:0]</obj_property>
+         <obj_property name="ObjectShortName">uart_data[11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/uart_cntr" type="array">
+         <obj_property name="ElementShortName">uart_cntr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">uart_cntr[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group218" type="group">
+      <obj_property name="label">RV CORE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="divider" fp_name="divider285">
+         <obj_property name="label">RV CORE</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#800000</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/resetn_i" type="logic">
+         <obj_property name="ElementShortName">resetn_i</obj_property>
+         <obj_property name="ObjectShortName">resetn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/sw_i" type="array">
+         <obj_property name="ElementShortName">sw_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sw_i[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_o" type="array">
+         <obj_property name="ElementShortName">led_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">led_o[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/kclk_i" type="logic">
+         <obj_property name="ElementShortName">kclk_i</obj_property>
+         <obj_property name="ObjectShortName">kclk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/kdata_i" type="logic">
+         <obj_property name="ElementShortName">kdata_i</obj_property>
+         <obj_property name="ObjectShortName">kdata_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/hex_led_o" type="array">
+         <obj_property name="ElementShortName">hex_led_o[6:0]</obj_property>
+         <obj_property name="ObjectShortName">hex_led_o[6:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/hex_sel_o" type="array">
+         <obj_property name="ElementShortName">hex_sel_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">hex_sel_o[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/rx_i" type="logic">
+         <obj_property name="ElementShortName">rx_i</obj_property>
+         <obj_property name="ObjectShortName">rx_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/tx_o" type="logic">
+         <obj_property name="ElementShortName">tx_o</obj_property>
+         <obj_property name="ObjectShortName">tx_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_r_o" type="array">
+         <obj_property name="ElementShortName">vga_r_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_r_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_g_o" type="array">
+         <obj_property name="ElementShortName">vga_g_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_g_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_b_o" type="array">
+         <obj_property name="ElementShortName">vga_b_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">vga_b_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_hs_o" type="logic">
+         <obj_property name="ElementShortName">vga_hs_o</obj_property>
+         <obj_property name="ObjectShortName">vga_hs_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_vs_o" type="logic">
+         <obj_property name="ElementShortName">vga_vs_o</obj_property>
+         <obj_property name="ObjectShortName">vga_vs_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/instr" type="array">
+         <obj_property name="ElementShortName">instr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/instr_addr" type="array">
+         <obj_property name="ElementShortName">instr_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/mem_req" type="logic">
+         <obj_property name="ElementShortName">mem_req</obj_property>
+         <obj_property name="ObjectShortName">mem_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/mem_we" type="logic">
+         <obj_property name="ElementShortName">mem_we</obj_property>
+         <obj_property name="ObjectShortName">mem_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/mem_wd" type="array">
+         <obj_property name="ElementShortName">mem_wd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_wd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/mem_addr" type="array">
+         <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/rd" type="array">
+         <obj_property name="ElementShortName">rd[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/stall" type="logic">
+         <obj_property name="ElementShortName">stall</obj_property>
+         <obj_property name="ObjectShortName">stall</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/mem_size" type="array">
+         <obj_property name="ElementShortName">mem_size[2:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_size[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/irq_req" type="logic">
+         <obj_property name="ElementShortName">irq_req</obj_property>
+         <obj_property name="ObjectShortName">irq_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/irq_ret" type="logic">
+         <obj_property name="ElementShortName">irq_ret</obj_property>
+         <obj_property name="ObjectShortName">irq_ret</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/data_mem_rd_o" type="array">
+         <obj_property name="ElementShortName">data_mem_rd_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_mem_rd_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/data_mem_ready_o" type="logic">
+         <obj_property name="ElementShortName">data_mem_ready_o</obj_property>
+         <obj_property name="ObjectShortName">data_mem_ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_req_o" type="logic">
+         <obj_property name="ElementShortName">lsu_mem_req_o</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_req_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_wd_o" type="array">
+         <obj_property name="ElementShortName">lsu_mem_wd_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_wd_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_addr_o" type="array">
+         <obj_property name="ElementShortName">lsu_mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_we_o" type="logic">
+         <obj_property name="ElementShortName">lsu_mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_be_o" type="array">
+         <obj_property name="ElementShortName">lsu_mem_be_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_be_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_mem_rd_i" type="array">
+         <obj_property name="ElementShortName">lsu_mem_rd_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lsu_mem_rd_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/lsu_data_i" type="array">
+         <obj_property name="ElementShortName">lsu_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">lsu_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/sysclk" type="logic">
+         <obj_property name="ElementShortName">sysclk</obj_property>
+         <obj_property name="ObjectShortName">sysclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/one_hot_encoder_o" type="array">
+         <obj_property name="ElementShortName">one_hot_encoder_o[255:0]</obj_property>
+         <obj_property name="ObjectShortName">one_hot_encoder_o[255:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/peripheral_addr" type="array">
+         <obj_property name="ElementShortName">peripheral_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">peripheral_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/data_mem_sb_req" type="logic">
+         <obj_property name="ElementShortName">data_mem_sb_req</obj_property>
+         <obj_property name="ObjectShortName">data_mem_sb_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/sw_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">sw_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">sw_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/sw_irq" type="logic">
+         <obj_property name="ElementShortName">sw_irq</obj_property>
+         <obj_property name="ObjectShortName">sw_irq</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/sw_data_o" type="array">
+         <obj_property name="ElementShortName">sw_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sw_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">led_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">led_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_data_o" type="array">
+         <obj_property name="ElementShortName">led_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">led_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ps2_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">ps2_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">ps2_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/hex_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">hex_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">hex_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/uart_rx_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">uart_rx_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">uart_rx_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/uart_tx_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">uart_tx_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">uart_tx_sb_ctrl_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/vga_sb_ctrl_req" type="logic">
+         <obj_property name="ElementShortName">vga_sb_ctrl_req</obj_property>
+         <obj_property name="ObjectShortName">vga_sb_ctrl_req</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group216" type="group">
+      <obj_property name="label">SW CTRL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="divider" fp_name="divider169">
+         <obj_property name="label">SW CTRL</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/req_i" type="logic">
+         <obj_property name="ElementShortName">req_i</obj_property>
+         <obj_property name="ObjectShortName">req_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/write_enable_i" type="logic">
+         <obj_property name="ElementShortName">write_enable_i</obj_property>
+         <obj_property name="ObjectShortName">write_enable_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/write_data_i" type="array">
+         <obj_property name="ElementShortName">write_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/read_data_o" type="array">
+         <obj_property name="ElementShortName">read_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/interrupt_request_o" type="logic">
+         <obj_property name="ElementShortName">interrupt_request_o</obj_property>
+         <obj_property name="ObjectShortName">interrupt_request_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/interrupt_return_i" type="logic">
+         <obj_property name="ElementShortName">interrupt_return_i</obj_property>
+         <obj_property name="ObjectShortName">interrupt_return_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/sw_i" type="array">
+         <obj_property name="ElementShortName">sw_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sw_i[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/read_req" type="logic">
+         <obj_property name="ElementShortName">read_req</obj_property>
+         <obj_property name="ObjectShortName">read_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/write_req" type="logic">
+         <obj_property name="ElementShortName">write_req</obj_property>
+         <obj_property name="ObjectShortName">write_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/rd_reg_Q" type="array">
+         <obj_property name="ElementShortName">rd_reg_Q[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_reg_Q[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/rd_reg_D" type="array">
+         <obj_property name="ElementShortName">rd_reg_D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_reg_D[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/addr_is_valid" type="logic">
+         <obj_property name="ElementShortName">addr_is_valid</obj_property>
+         <obj_property name="ObjectShortName">addr_is_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/sw_changed" type="logic">
+         <obj_property name="ElementShortName">sw_changed</obj_property>
+         <obj_property name="ObjectShortName">sw_changed</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/switch_controller/read_en" type="logic">
+         <obj_property name="ElementShortName">read_en</obj_property>
+         <obj_property name="ObjectShortName">read_en</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_riscv_unit/dut/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_riscv_unit/dut/core/register_file_inst/rf_mem" type="array">
+      <obj_property name="ElementShortName">rf_mem[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_mem[0:31][31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#800000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="group215" type="group">
+      <obj_property name="label">LED CTRL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="divider" fp_name="divider187">
+         <obj_property name="label">LED CTRL</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rst_i" type="logic">
+         <obj_property name="ElementShortName">rst_i</obj_property>
+         <obj_property name="ObjectShortName">rst_i</obj_property>
+         <obj_property name="CustomSignalColor">#A52A2A</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/req_i" type="logic">
+         <obj_property name="ElementShortName">req_i</obj_property>
+         <obj_property name="ObjectShortName">req_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/write_enable_i" type="logic">
+         <obj_property name="ElementShortName">write_enable_i</obj_property>
+         <obj_property name="ObjectShortName">write_enable_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/write_data_i" type="array">
+         <obj_property name="ElementShortName">write_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data_i[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/read_data_o" type="array">
+         <obj_property name="ElementShortName">read_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/led_o" type="array">
+         <obj_property name="ElementShortName">led_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">led_o[15:0]</obj_property>
+         <obj_property name="CustomSignalColor">#FF0080</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/led_val" type="array">
+         <obj_property name="ElementShortName">led_val[15:0]</obj_property>
+         <obj_property name="ObjectShortName">led_val[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/led_mode" type="logic">
+         <obj_property name="ElementShortName">led_mode</obj_property>
+         <obj_property name="ObjectShortName">led_mode</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/write_req" type="logic">
+         <obj_property name="ElementShortName">write_req</obj_property>
+         <obj_property name="ObjectShortName">write_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/read_req" type="logic">
+         <obj_property name="ElementShortName">read_req</obj_property>
+         <obj_property name="ObjectShortName">read_req</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/is_val_addr" type="logic">
+         <obj_property name="ElementShortName">is_val_addr</obj_property>
+         <obj_property name="ObjectShortName">is_val_addr</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/is_mode_addr" type="logic">
+         <obj_property name="ElementShortName">is_mode_addr</obj_property>
+         <obj_property name="ObjectShortName">is_mode_addr</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/is_rst_addr" type="logic">
+         <obj_property name="ElementShortName">is_rst_addr</obj_property>
+         <obj_property name="ObjectShortName">is_rst_addr</obj_property>
+         <obj_property name="CustomSignalColor">#F0E68C</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/val_valid" type="logic">
+         <obj_property name="ElementShortName">val_valid</obj_property>
+         <obj_property name="ObjectShortName">val_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/mode_valid" type="logic">
+         <obj_property name="ElementShortName">mode_valid</obj_property>
+         <obj_property name="ObjectShortName">mode_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rst_valid" type="logic">
+         <obj_property name="ElementShortName">rst_valid</obj_property>
+         <obj_property name="ObjectShortName">rst_valid</obj_property>
+         <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+         <obj_property name="CustomSignalColor">#D2691E</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/val_en" type="logic">
+         <obj_property name="ElementShortName">val_en</obj_property>
+         <obj_property name="ObjectShortName">val_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/mode_en" type="logic">
+         <obj_property name="ElementShortName">mode_en</obj_property>
+         <obj_property name="ObjectShortName">mode_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/cntr" type="array">
+         <obj_property name="ElementShortName">cntr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cntr[31:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/cntr_rst" type="logic">
+         <obj_property name="ElementShortName">cntr_rst</obj_property>
+         <obj_property name="ObjectShortName">cntr_rst</obj_property>
+         <obj_property name="CustomSignalColor">#FFA500</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_Q" type="array">
+         <obj_property name="ElementShortName">rd_reg_Q[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_reg_Q[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_en" type="logic">
+         <obj_property name="ElementShortName">rd_reg_en</obj_property>
+         <obj_property name="ObjectShortName">rd_reg_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/rd_reg_D" type="array">
+         <obj_property name="ElementShortName">rd_reg_D[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rd_reg_D[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/led_controller/frequency" type="array">
+         <obj_property name="ElementShortName">frequency[31:0]</obj_property>
+         <obj_property name="ObjectShortName">frequency[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group121" type="group">
+      <obj_property name="label">EXTERNAL MEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="divider" fp_name="divider137">
+         <obj_property name="label">EXT MEM</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/mem_req_i" type="logic">
+         <obj_property name="ElementShortName">mem_req_i</obj_property>
+         <obj_property name="ObjectShortName">mem_req_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/write_enable_i" type="logic">
+         <obj_property name="ElementShortName">write_enable_i</obj_property>
+         <obj_property name="ObjectShortName">write_enable_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_enable_i" type="array">
+         <obj_property name="ElementShortName">byte_enable_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_enable_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/write_data_i" type="array">
+         <obj_property name="ElementShortName">write_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">write_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/read_data_o" type="array">
+         <obj_property name="ElementShortName">read_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/ready_o" type="logic">
+         <obj_property name="ElementShortName">ready_o</obj_property>
+         <obj_property name="ObjectShortName">ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_addr" type="array">
+         <obj_property name="ElementShortName">byte_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/address_is_valid" type="logic">
+         <obj_property name="ElementShortName">address_is_valid</obj_property>
+         <obj_property name="ObjectShortName">address_is_valid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_0" type="array">
+         <obj_property name="ElementShortName">byte_0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_0[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_1" type="array">
+         <obj_property name="ElementShortName">byte_1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_1[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_2" type="array">
+         <obj_property name="ElementShortName">byte_2[7:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_2[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/byte_3" type="array">
+         <obj_property name="ElementShortName">byte_3[7:0]</obj_property>
+         <obj_property name="ObjectShortName">byte_3[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_riscv_unit/dut/ext_mem_inst/cells_value" type="array">
+         <obj_property name="ElementShortName">cells_value[31:0]</obj_property>
+         <obj_property name="ObjectShortName">cells_value[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

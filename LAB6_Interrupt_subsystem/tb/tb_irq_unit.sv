@@ -41,7 +41,7 @@ module tb_irq_unit();
 
 
     initial begin
-      repeat(1000) begin
+      repeat(10000) begin
         @(posedge clk);
       end
       // $fatal(1, "Test has been interrupted by watchdog timer");
@@ -56,6 +56,7 @@ module tb_irq_unit();
         $display( "\nStart test: \n\n==========================\nCLICK THE BUTTON 'Run All'\n==========================\n"); $stop();
         rst = 1;
         unit.irq_req = 0;
+        repeat(200) @(posedge clk);
         #50;
         rst = 0;
         #200;

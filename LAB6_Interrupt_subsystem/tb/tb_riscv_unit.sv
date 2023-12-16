@@ -1,54 +1,125 @@
-`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: MIET
-// Engineer: Nikita Bulavin
-//
-// Create Date:
-// Design Name:
+// Engineer: Andrei Solodovnikov
+
 // Module Name:    tb_riscv_unit
 // Project Name:   RISCV_practicum
 // Target Devices: Nexys A7-100T
-// Tool Versions:
-// Description: tb for datapath
-//
-// Dependencies:
-//
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Description: tb for peripheral units
 //
 //////////////////////////////////////////////////////////////////////////////////
 
 module tb_riscv_unit();
 
-    reg clk;
-    reg rst;
+logic clk;
+logic ps2_clk;
+logic ps2_dat;
+logic resetn;
+logic [15:0] sw_i;
+logic [15:0] led_o;
+logic parity;
+logic starter;
 
-    riscv_unit unit(
-    .clk_i(clk),
-    .rst_i(rst)
-    );
+logic [ 6:0] hex_led_o;
+logic [ 7:0] hex_sel_o;
+logic        rx_i;
+logic        tx_o;
 
-    initial clk = 0;
-    always #10 clk = ~clk;
-    
-    initial begin
-        $display( "\nStart test: \n\n==========================\nCLICK THE BUTTON 'Run All'\n==========================\n"); $stop();
-        rst = 1;
-        #20;
-        rst = 0;
-        #1800;
-        $display("\n The test is over \n See the internal signals of the module on the waveform \n");
-        $finish;
-    end
+logic [3:0] cntr;
 
-stall_seq: assert property (
-  @(posedge unit.core.clk_i) disable iff ( unit.core.rst_i )
-    unit.core.mem_req_o |-> (unit.core.stall_i || $past(unit.core.stall_i))
-)else $error("\nincorrect implementation of stall signal\n");
+initial begin clk = 0; ps2_clk = 0; end
 
-stall_seq_fall: assert property (
-  @(posedge unit.core.clk_i) disable iff ( unit.core.rst_i )
-    (unit.core.stall_i) |=> !unit.core.stall_i
-)else $error("\nstall must fall exact one cycle after rising\n");
+always #5ns clk = ~clk;
+always #50000 if(starter || (cntr > 0)) ps2_clk = ~ps2_clk; else ps2_clk = 1;
+
+logic [11:0] data, uart_data;
+
+initial #6ms $finish();
+
+initial begin
+  resetn = 1;
+  repeat(20)@(posedge clk);
+  resetn = 0;
+  repeat(20) @(posedge clk);
+  resetn = 1;
+end
+
+riscv_unit dut(
+  .clk_i    (clk      ),
+  .resetn_i (resetn   ),
+  .sw_i     (sw_i     ),
+  .led_o    (led_o    ),
+  .kclk_i   (ps2_clk  ),
+  .kdata_i  (ps2_dat  ),
+  .hex_led_o(hex_led_o),
+  .hex_sel_o(hex_sel_o),
+  .rx_i     (rx_i     ),
+  .tx_o     (tx_o     )
+);
+
+initial begin: sw_block
+  sw_i = 16'd0;
+  repeat(1000) @(posedge clk);
+  sw_i = 16'hf001;
+  repeat(1000) @(posedge clk);
+  sw_i = 16'h5555;
+  repeat(1000) @(posedge clk);
+  sw_i = 16'hface;
+  repeat(1000) @(posedge clk);
+  sw_i = 16'haaaa;
+end
+
+
+always @(negedge ps2_clk) begin: ps2_always_block
+  if(starter || (cntr > 0))
+    if(cntr == 10)
+      cntr <= 0;
+    else
+      cntr <= cntr + 1;
+end
+
+assign ps2_dat = cntr>0? data[cntr-1] : 1;
+
+initial begin: ps2_initial_block
+  cntr = 0;
+  starter = 0;
+  data = 0;
+  repeat(10000) @(posedge clk);
+  ps2_send_scan_code(8'h1c);
+  ps2_send_scan_code(8'he0);
+  ps2_send_scan_code(8'hf0);
+  ps2_send_scan_code(8'h1c);
+  ps2_send_scan_code(8'h5c);
+end
+
+task ps2_send_scan_code(input logic [7:0] code);
+  data = {2'b11, !(^code), code, 1'b0};
+  starter = 1;
+  @(posedge ps2_clk);
+  starter = 0;
+  repeat(10) @(posedge ps2_clk);
+endtask
+
+
+initial begin: uart_rx_initial_block
+  uart_data = '1;
+  repeat(1000) @(posedge clk);
+  uart_rx_send_char(8'h1c, 115200);
+  uart_rx_send_char(8'h0D, 115200);
+  uart_rx_send_char(8'h0D, 115200);
+  uart_rx_send_char(8'h7F, 115200);
+  uart_rx_send_char(8'h7F, 115200);
+end
+assign rx_i = uart_data[0];
+int uart_cntr;
+task uart_rx_send_char(input logic [7:0] char, input logic [31:0] baudrate);
+  uart_data = {2'b11, (^char), char, 1'b0};
+  uart_cntr = 0;
+  while(uart_cntr <= 15) begin
+    #(1s/baudrate);
+    uart_data = {1'b1, uart_data[11:1]};
+    uart_cntr++;
+  end
+endtask
+
 endmodule
