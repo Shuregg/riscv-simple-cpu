@@ -106,8 +106,8 @@ sys_clk_rst_gen divider(.ex_clk_i(clk_i),.ex_areset_n_i(resetn_i),.div_i('d10),.
       8'd0:     lsu_data_i = data_mem_rd_o;
       8'd1:     lsu_data_i = sw_data_o;
       8'd2:     lsu_data_i = led_data_o;
-
       8'd3:     lsu_data_i = ps2_data_o;
+      
       8'd7:     lsu_data_i = vga_data_o;
       default:  lsu_data_i = 8'b0;
       // 8'd255: // Max index
