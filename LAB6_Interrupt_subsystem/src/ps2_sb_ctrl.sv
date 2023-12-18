@@ -23,11 +23,13 @@ module ps2_sb_ctrl(
   input  logic kclk_i,
   input  logic kdata_i
 );
+
 //============Parameters============
 // PS2-Controller register adresses
   localparam SCANCODE_REG_ADDR = 32'h0;
   localparam UNREADED_REG_ADDR = 32'h4;
   localparam RESET_REG_ADDR    = 32'h24;
+
 //============Main Wires/Registers============
 // PS2-Controller side
   logic [7:0] scan_code;
@@ -35,6 +37,7 @@ module ps2_sb_ctrl(
 // PS2-Receiver side
   logic [7:0] keycode;
   logic       keycode_is_valid;
+
 //============Additional Signals============
 // R/W request signals
   logic       read_req;
@@ -55,6 +58,7 @@ module ps2_sb_ctrl(
   assign      is_rst_addr               = (addr_i == 32'h24);
 
   assign      rst_valid                 = (write_data_i < 2'd2);
+
 //============Module Instances============
   PS2Receiver PS2_Receiver_inst (
     .clk_i(clk_i),
@@ -104,12 +108,12 @@ module ps2_sb_ctrl(
                   scan_code           <= 8'b0;
                   scan_code_is_unread <= 1'b0;
                 end else begin
-                  scan_code           <= scan_code
+                  scan_code           <= scan_code;
                   scan_code_is_unread <= scan_code_is_unread;
                 end
               end
               default           : begin
-                scan_code           <= scan_code
+                scan_code           <= scan_code;
                 scan_code_is_unread <= scan_code_is_unread;
               end
             endcase
@@ -119,7 +123,7 @@ module ps2_sb_ctrl(
     end
   end
 
-//============Read Data Output============
+//============Processing a Read Request============
   always_comb begin
     if(rst_i) begin
       read_data_o = 32'b0;
