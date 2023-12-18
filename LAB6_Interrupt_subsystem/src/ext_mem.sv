@@ -43,6 +43,8 @@ module ext_mem(
   logic [7:0] byte_2;
   logic [7:0] byte_3;
 
+  initial $readmemh("lab_12_ps2ascii_data.mem", RAM);
+
   //Bytes to write
   assign byte_0 = byte_enable_i[0] ? write_data_i[ 7: 0] : RAM[byte_addr][7:0];
   assign byte_1 = byte_enable_i[1] ? write_data_i[15: 8] : RAM[byte_addr][15:8];
