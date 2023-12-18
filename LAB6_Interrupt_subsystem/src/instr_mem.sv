@@ -11,7 +11,8 @@ module instr_mem(
   // initial $readmemh("sqareOfNum.txt", ROM);
   // initial $readmemh("program.txt", ROM);
   // initial $readmemh("irq_program.txt", ROM);
-  initial $readmemh("lab_12_sw_led_instr.mem", ROM);
+  // initial $readmemh("lab_12_sw_led_instr.mem", ROM);
+  initial $readmemh("lab_12_ps2_vga_instr.mem", ROM);
   assign byte_addr = addr_i >> 2; //addr/4
   assign address_is_valid = (addr_i <= 4*cells_value-1); 
   
